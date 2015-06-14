@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>view | chenchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="view 的事件传递">
+<meta property="og:type" content="article">
+<meta property="og:title" content="view">
+<meta property="og:url" content="http://yoursite.com/2015/06/14/view/index.html">
+<meta property="og:site_name" content="chenchen">
+<meta property="og:description" content="view 的事件传递">
+<meta property="og:image" content="https://farm6.staticflickr.com/5529/13927155020_73bdfab805_o.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7062/14110505861_6569e33985_o.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/view_mechanism_flow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/view_draw_method_chain.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/measure_layout.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/measurechildflow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/draw_method_flow.png">
+<meta property="og:updated_time" content="2015-06-14T12:32:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="view">
+<meta name="twitter:description" content="view 的事件传递">
+  
+    <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chenchen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">be all you can be.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 15px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/view/" style="font-size: 15px;">view</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">做好眼前的事</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chenchen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chenchen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">be all you can be.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-view" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/14/view/" class="article-date">
+  	<time datetime="2015-06-14T12:26:49.000Z" itemprop="datePublished">2015-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      view
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/view/">view</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="view_的事件传递">view 的事件传递</h3><a id="more"></a>
+<p>在官网里面：  </p>
+<ol>
+<li>view 不处理事件流程图<br><img src="https://farm6.staticflickr.com/5529/13927155020_73bdfab805_o.jpg" alt="">  </li>
+<li>view处理事件流程图<br><img src="https://farm8.staticflickr.com/7062/14110505861_6569e33985_o.jpg" alt="">  </li>
+</ol>
+<p>基础知识：<br>所有touch事件都被封装成MotionEvent对象<br>对事件的处理有三类，分别是：  </p>
+<ul>
+<li>传递： dispatchTouchEvent()  </li>
+<li>拦截： onInterceptTouchEvent()</li>
+<li>消费： onTouchEvent() 和onTouchListener<br>在源码里面，会先对onTouchListener进行判断，才决定要不要传递给onTouchEvent,<br>所以onTouchListener会优先于onTouchEvent().  </li>
+</ul>
+<p>传递流程：<br>事件从Activity.dispatchTouchEvent()开始传递，只要没有被停止或拦截，<br>从最上层的View(ViewGroup)开始一直往下(子View)传递，子View可以通过onTouchEvent()对事件进行处理。  </p>
+<p>viewgroup(传递)—-&gt;view, 同时viewgroup可以通过onInterceptTouchEvent()对事件做拦截。<br>如果从上向下传递的过程中一直为停止，且最底层没有消费事件，事件会向上传递，这是父view可以<br>进行消费，如果还是没有消费，最后会到activity的onTouchEvent().  </p>
+<p>执行顺序是：  </p>
+<p>  Activity.dispatchTouchEvent()<br>  ViewGroup.dispatchTouchEvent()<br>  View.dispatchTouchEvent()<br>  View.onTouchEvent()<br>  ViewGroup.onTouchEvent()<br>  Activity.onTouchEvent()  </p>
+<p>  onInterceptTouchEvent 返回false，则后续再来的事件（比如ACTION_UP）会<br>  继续传递给子view的onTouchEvent;<br>  onInterceptTouchEvent 返回true，则后续再来的事件（比如ACTION_UP)就<br>  不会传递给子view.<br>  view的onTouchEvent返回true，则表示后续事件已经消化干净，viewgroup的<br>  onTouchEvent就不会被调用，否则相反。<br>  onTouchEvent()—-&gt;ACTION_DOWN时，返回false，则后续的手势动作都不会<br>  传递进这个方法（ViewGroup和View一样）.<br>  viewgroup的onTouchEvent()—-&gt;返回true，则后续手势都不会传递给onInterceptTouchEvent()<br>  而是在ViewGroup的onTouchEvent()中注意处理。</p>
+<h3 id="view_树的绘制流程">view 树的绘制流程</h3><p>流程图：<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/view_mechanism_flow.png" alt="">  </p>
+<p>view绘制流程函数调用链。<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/view_draw_method_chain.png" alt=""><br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/measure_layout.png" alt=""><br>树的遍历是有序的，由父视图到子视图，每一个viewgroup负责测绘它的所有子视图，而最底层的view会负责自身回测。  </p>
+<h5 id="具体分析">具体分析</h5><p>measure 过程是由measure（int, int）方法发起，从上到下有序的测量view，在measure过程的最后，<br>每个视图存储了自己的大小和测量规格，layout过程由layout(int, int, int)方法发起，<br>也是自上而下。在该过程中，每个父视图会根据measure过程得到的尺寸来摆放自己的子视图。  </p>
+<p>measure 过程会为一个View及所有子节点的 mMeasuredWidth 和 mMeasuredHeight 变量赋值，<br>该值可以通过getMeasureWidth()和getMeasureHeight()得到。而且这两个值必须在父视图约束范围之内<br>这样才可以保证所有的父视图都接收所有子视图的测量。  </p>
+<h5 id="measure过程传递尺寸的两个类">measure过程传递尺寸的两个类</h5><ul>
+<li>ViewGroup.LayoutParams(view 自身的布局参数)</li>
+<li>MeasureSpecs类(父视图对子视图的测量要求)  </li>
+</ul>
+<p>ViewGroup.LayoutParams<br>这个类很常见，用来指定视图的高度和宽度等参数。对于视图的宽和高：  </p>
+<ul>
+<li>具体值</li>
+<li>MATCH_PARENT  表示子视图希望和父视图一样大(不包含padding值)</li>
+<li>WRAP_CONTENT 表示视图为正好能包裹其内容大小(包含padding值)<br>ViewGroup 的子类有其对应的 ViewGroup.LayoutParams 的子类。<br>有时我们需要使用 view.getLayoutParams() 方法获取一个视图 LayoutParams ,<br>然后进行强转，但由于不知道其具体类型，可能会导致强转错误。其实该方法就是<br>得到其所在父视图类型的 LayoutParams，比如 View 的父控件为 RelativeLayout，<br>那么得到的 LayoutParams 类型就为 RelativeLayoutParams。   这里需要很特别的注意，在强转时可能会造成错误！！！  </li>
+</ul>
+<p>MeasureSpecs<br>测量规格，包含测量要求和尺寸的信息，有三种模式:  </p>
+<ul>
+<li>UNSPECIFIED<br>父视图不对子视图有任何约束，它可以达到所期望的任意尺寸。<br>比如ListView、ScrollView，一般自定义View中用不到  </li>
+<li><p>EXACTLY  </p>
+<p>父视图为子视图指定一个确切的尺寸，而且无论子视图期望多大，<br>它都必须在该指定大小的边界内，对应的属性为 match_parent 或具体指，<br>比如 100dp，父控件可以通过MeasureSpec.getSize(measureSpec)直接得到子控件的尺寸。  </p>
+</li>
+<li><p>AT_MOST  </p>
+<p>父视图为子视图指定一个最大尺寸。子视图必须确保它自己所有子视图<br>可以适应在该尺寸范围内，对应的属性为 wrap_content，在这种模式下，<br>父控件无法确定子 View 的尺寸，只能由子控件自己根据需求去计算自己的尺寸  </p>
+</li>
+</ul>
+<h5 id="measure_核心方法">measure 核心方法</h5><ul>
+<li><p>measure(int widthMeasureSpec, int heightMeasureSpec)   </p>
+<p>该方法定义在view.java类中，为final类型，不可被复写，但 measure 调用链<br>最终会回调 View/ViewGroup 对象的 onMeasure()，因此自定义视图时，只需要重写onMeasure()</p>
+</li>
+<li><p>onMeasure(int widthMeasureSpec, int heightMeasureSpec)</p>
+<p>该方法就是我们自定义视图中实现测量逻辑的方法，该方法的参数是父视图<br>对子视图的 width 和 height 的测量要求，在自定义视图中，要根据该<br>widthMeasureSpec 和 heightMeasureSpec 计算视图的 width 和 height，<br>不同的模式处理方式不同。</p>
+</li>
+<li><p>setMeasuredDimension()  </p>
+<p>测量阶段终极方法，在 onMeasure(int widthMeasureSpec, int heightMeasureSpec) 方法中调用，<br>将计算得到的尺寸，传递给该方法，测量阶段即结束。该方法也是必须要调用的方法，否则会报异常。<br>在自定义视图里面，不需要关心系统复杂的 Measure 过程的，只需调用setMeasuredDimension()<br>设置根据 MeasureSpec 计算得到的尺寸。  </p>
+</li>
+</ul>
+<p>取 ViewGroup 的 measureChildren（int widthMeasureSpec, int heightMeasureSpec)<br>对对复合 View 的 Measure 流程做一个分析： MeasureChild 的方法调用流程图：<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/measurechildflow.png" alt="">  </p>
+<h5 id="源码分析">源码分析</h5><pre><code><span class="comment">/**
+ * 请求所有子 View 去 measure 自己，要考虑的部分有对子 View 的测绘要求 MeasureSpec 以及其自身的 padding
+ * 这里跳过所有为 GONE 状态的子 View ，最繁重的工作是在 getChildMeasureSpec 方法中处理的
+ *
+ * <span class="doctag">@param</span> widthMeasureSpec  对该 View 的 width 测绘要求
+ * <span class="doctag">@param</span> heightMeasureSpec 对该 View 的 height 测绘要求
+ */</span>
+<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">measureChildren</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>{
+    <span class="keyword">final</span> <span class="keyword">int</span> size = mChildrenCount;
+    <span class="keyword">final</span> View[] children = mChildren;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) {
+        <span class="keyword">final</span> View child = children[i];
+        <span class="keyword">if</span> ((child.mViewFlags &amp; VISIBILITY_MASK) != GONE) {
+            measureChild(child, widthMeasureSpec, heightMeasureSpec);
+        }
+    }
+}
+
+<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">measureChild</span><span class="params">(View child, <span class="keyword">int</span> parentWidthMeasureSpec,
+        <span class="keyword">int</span> parentHeightMeasureSpec)</span> </span>{
+    <span class="keyword">final</span> LayoutParams lp = child.getLayoutParams();<span class="comment">//获取Child的LayoutParams</span>
+
+    <span class="keyword">final</span> <span class="keyword">int</span> childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,<span class="comment">// 获取 ChildView的widthMeasureSpec</span>
+            mPaddingLeft + mPaddingRight, lp.width);
+    <span class="keyword">final</span> <span class="keyword">int</span> childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,<span class="comment">// 获取 ChildView的heightMeasureSpec</span>
+            mPaddingTop + mPaddingBottom, lp.height);
+
+    child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+}
+
+<span class="comment">/** 
+ * 该方法是 measureChildren 中最繁重的部分，为每一个 ChildView 计算出自己的 MeasureSpec。
+ * 目标是将 ChildView 的 MeasureSpec 和 LayoutParams 结合起来去得到一个最合适的结果。
+ *
+ * <span class="doctag">@param</span> spec 对该 View 的测绘要求
+ * <span class="doctag">@param</span> padding 当前 View 在当前唯独上的 paddingand，也有可能含有 margins
+ *
+ * <span class="doctag">@param</span> childDimension 在当前维度上（height或width）的具体指
+ * <span class="doctag">@return</span> 子视图的 MeasureSpec 
+ */</span>
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">int</span> <span class="title">getChildMeasureSpec</span><span class="params">(<span class="keyword">int</span> spec, <span class="keyword">int</span> padding, <span class="keyword">int</span> childDimension)</span> </span>{
+
+        .........
+
+    <span class="comment">// 根据获取到的子视图的测量要求和大小创建子视图的MeasureSpec</span>
+    <span class="function"><span class="keyword">return</span> MeasureSpec.<span class="title">makeMeasureSpec</span><span class="params">(resultSize, resultMode)</span></span>;  
+}
+
+<span class="comment">/**
+ *
+ * 用于获取 View 最终的大小，父视图提供了宽、高的约束信息
+ * 一个 View 的真正的测量工作是在 onMeasure(int, int) 中，由该方法调用。
+ * 因此，只有 onMeasure(int, int) 可以而且必须被子类复写
+ *
+ * <span class="doctag">@param</span> widthMeasureSpec 在水平方向上，父视图指定的的 Measure 要求
+ * <span class="doctag">@param</span> heightMeasureSpec 在竖直方向上，控件上父视图指定的 Measure 要求
+ *
+ */</span>
+<span class="keyword">public</span> <span class="keyword">final</span> <span class="function"><span class="keyword">void</span> <span class="title">measure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>{
+  ...
+
+  onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+  ...
+}
+
+<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>{
+    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
+            getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
+}
+</code></pre><h4 id="layout相关概念及核心方法">layout相关概念及核心方法</h4><p>首先要明确的是，子视图的具体位置都是相对于父视图而言的，view的onLayout()为空实现，<br>而 ViewGroup 的 onLayout 为 abstract 的，所以，如果自定义view要继承ViewGroup,<br>必须实现onLayout函数。<br>在layout过程中，子视图会调用getMeasuredWidth()和getMeasuredHeight()获取到measure<br>过程得到的 mMeasuredWidth 和 mMeasuredHeight，作为自己的 width 和 height<br>然后调用每一个子视图的layout(l, t, r, b)函数，来确定每一个子视图的位置  </p>
+<h4 id="linearlayout的onLayout源码分析">linearlayout的onLayout源码分析</h4><pre><code><span class="annotation">@Override</span>
+<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>{
+    <span class="keyword">if</span> (mOrientation == VERTICAL) {
+        layoutVertical(l, t, r, b);
+    } <span class="keyword">else</span> {
+        layoutHorizontal(l, t, r, b);
+    }
+}
+
+<span class="comment">/**
+ * 遍历所有的子 View，为其设置相对父视图的坐标
+ */</span>
+<span class="function"><span class="keyword">void</span> <span class="title">layoutVertical</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>{
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) {
+            <span class="keyword">final</span> View child = getVirtualChildAt(i);
+            <span class="keyword">if</span> (child == <span class="keyword">null</span>) {
+                childTop += measureNullChild(i);
+            } <span class="keyword">else</span> <span class="keyword">if</span> (child.getVisibility() != GONE) {<span class="comment">//不需要立即展示的View设置为GONE可加快绘制</span>
+                <span class="keyword">final</span> <span class="keyword">int</span> childWidth = child.getMeasuredWidth();<span class="comment">//measure过程确定的Width</span>
+                <span class="keyword">final</span> <span class="keyword">int</span> childHeight = child.getMeasuredHeight();<span class="comment">//measure过程确定的height</span>
+
+                ...确定 childLeft、childTop 的值
+
+                setChildFrame(child, childLeft, childTop + getLocationOffset(child),
+                        childWidth, childHeight);
+            }
+        }
+}
+
+<span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">setChildFrame</span><span class="params">(View child, <span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>{        
+    child.layout(left, top, left + width, top + height);
+}    
+
+View.java
+<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">layout</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>{
+    ...
+    setFrame(l, t, r, b)
+}
+
+<span class="comment">/**
+ * 为该子 View 设置相对其父视图上的坐标
+ */</span>
+ <span class="keyword">protected</span> <span class="function"><span class="keyword">boolean</span> <span class="title">setFrame</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>{
+     ...
+ }
+</code></pre><h5 id="绘制流程相关概念及核心方法">绘制流程相关概念及核心方法</h5><p>与draw过程的相关的函数：  </p>
+<ul>
+<li><p>View.draw(Canvas canvas)：   </p>
+<p>ViewGroup 并没有复写此方法，所以所有的视图最终都是调用 View 的 draw<br>进行绘制的。在自定义的视图中，不应该复写该方法，而是复写onDraw(Canvas)方法进行绘制<br>如果自定义的视图一定要复写该方法，请先调用super.draw(canvas)完成系统的绘制，再进行自定义绘制  </p>
+</li>
+<li><p>View.onDraw()：  </p>
+<p>View的onDraw（Canvas）默认是空实现，自定义绘制过程需要复写的方法，绘制自身的内容。</p>
+</li>
+<li><p>dispatchDraw() 发起对子视图的绘制  </p>
+<p>View中默认是空实现，ViewGroup 复写了dispatchDraw()来对其子视图进行绘制，<br>该方法我们不用去管，自定义的 ViewGroup 不应该对dispatchDraw()进行复写。  </p>
+</li>
+</ul>
+<p>绘制流程图：<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tech/image/viewdrawflow/draw_method_flow.png" alt="">  </p>
+<h4 id="View-draw(Canvas)_源码分析">View.draw(Canvas) 源码分析</h4><pre><code>    <span class="comment">/**
+ * Manually render this view (and all of its children) to the given Canvas.
+ * The view must have already done a full layout before this function is
+ * called.  When implementing a view, implement
+ * {@link #onDraw(android.graphics.Canvas)} instead of overriding this method.
+ * If you do need to override this method, call the superclass version.
+ *
+ * @param canvas The Canvas to which the View is rendered.  
+ *
+ * 根据给定的 Canvas 自动渲染 View（包括其所有子 View）。在调用该方法之前必须要完成 layout。当你自定义 view 的时候，
+ * 应该去是实现 onDraw(Canvas) 方法，而不是 draw(canvas) 方法。如果你确实需要复写该方法，请记得先调用父类的方法。
+ */</span>
+public void draw<span class="params">(Canvas canvas)</span> {
+
+    / <span class="built_in">*</span> Draw traversal performs several drawing steps which must be executed
+     <span class="built_in">*</span> in the appropriate order:
+     <span class="built_in">*</span>
+     <span class="built_in">*</span>      <span class="number">1</span>. Draw the background <span class="keyword">if</span> need
+     <span class="built_in">*</span>      <span class="number">2</span>. If necessary, save the canvas' layers to prepare <span class="keyword">for</span> fading
+     <span class="built_in">*</span>      <span class="number">3</span>. Draw view's content
+     <span class="built_in">*</span>      <span class="number">4</span>. Draw <span class="built_in">children</span> <span class="params">(dispatchDraw)</span>
+     <span class="built_in">*</span>      <span class="number">5</span>. If necessary, draw the fading edges and restore layers
+     <span class="built_in">*</span>      <span class="number">6</span>. Draw decorations <span class="params">(scrollbars for instance)</span>
+     <span class="built_in">*</span>/
+
+    <span class="comment">// Step 1, draw the background, if needed</span>
+    <span class="keyword">if</span> <span class="params">(!dirtyOpaque)</span> {
+        drawBackground<span class="params">(canvas)</span>;
+    }
+
+     <span class="comment">// skip step 2 &amp; 5 if possible (common case)</span>
+    final int viewFlags = mViewFlags;
+    <span class="keyword">if</span> <span class="params">(!verticalEdges &amp;&amp; !horizontalEdges)</span> {
+        <span class="comment">// Step 3, draw the content</span>
+        <span class="keyword">if</span> <span class="params">(!dirtyOpaque)</span> onDraw<span class="params">(canvas)</span>;
+
+        <span class="comment">// Step 4, draw the children</span>
+        dispatchDraw<span class="params">(canvas)</span>;
+
+        <span class="comment">// Step 6, draw decorations (scrollbars)</span>
+        onDrawScrollBars<span class="params">(canvas)</span>;
+
+        <span class="keyword">if</span> <span class="params">(mOverlay != null &amp;&amp; !mOverlay.isEmpty<span class="params">()</span>)</span> {
+            mOverlay.getOverlayView<span class="params">()</span>.dispatchDraw<span class="params">(canvas)</span>;
+        }
+
+        <span class="comment">// we're done...</span>
+        return;
+    }
+
+    <span class="comment">// Step 2, save the canvas' layers</span>
+    ...
+
+    <span class="comment">// Step 3, draw the content</span>
+    <span class="keyword">if</span> <span class="params">(!dirtyOpaque)</span> 
+        onDraw<span class="params">(canvas)</span>;
+
+    <span class="comment">// Step 4, draw the children</span>
+    dispatchDraw<span class="params">(canvas)</span>;
+
+    <span class="comment">// Step 5, draw the fade effect and restore layers</span>
+
+    <span class="comment">// Step 6, draw decorations (scrollbars)</span>
+    onDrawScrollBars<span class="params">(canvas)</span>;
+  }
+</code></pre><p>由上面的处理过程，我们也可以得出一些优化的小技巧：<br>当不需要绘制 Layer 的时候第二步和第五步会跳,。因此在绘制的时候，<br>能省的layer尽可省，可以提高绘制效率.</p>
+<h4 id="ViewGroup-dispatchDraw()_源码分析">ViewGroup.dispatchDraw() 源码分析</h4><pre><code> dispatchDraw<span class="params">(Canvas canvas)</span>{
+
+ ...
+<span class="keyword">if</span> <span class="params">(<span class="params">(flags &amp; FLAG_RUN_ANIMATION)</span> != <span class="number">0</span> &amp;&amp; canAnimate<span class="params">()</span>)</span> {<span class="comment">//处理ChildView的动画</span>
+ final boolean buildCache = <span class="built_in">!</span>isHardwareAccelerated<span class="params">()</span>;
+      <span class="keyword">for</span> <span class="params">(int i = <span class="number">0</span>; i &lt; childrenCount; i++)</span> {
+          final View child = <span class="built_in">children</span>[i];
+          <span class="keyword">if</span> <span class="params">(<span class="params">(child.mViewFlags &amp; VISIBILITY_MASK)</span> == VISIBLE)</span> {<span class="comment">//只绘制 Visible 状态的布局，因此可以通过延时加载来提高效率</span>
+              final LayoutParams params = child.getLayoutParams<span class="params">()</span>;
+              attachLayoutAnimationParameters<span class="params">(child, params, i, childrenCount)</span>;<span class="comment">// 添加布局变化的动画</span>
+              bindLayoutAnimation<span class="params">(child)</span>;<span class="comment">//为Child绑定动画</span>
+              <span class="keyword">if</span> <span class="params">(cache)</span> {
+                  child.setDrawingCacheEnabled<span class="params">(<span class="literal">true</span>)</span>;
+                  <span class="keyword">if</span> <span class="params">(buildCache)</span> {
+                      child.buildDrawingCache<span class="params">(<span class="literal">true</span>)</span>;
+                  }
+              }
+          }
+      }
+
+final LayoutAnimationController controller = mLayoutAnimationController;
+      <span class="keyword">if</span> <span class="params">(controller.willOverlap<span class="params">()</span>)</span> {
+          mGroupFlags |= FLAG_OPTIMIZE_INVALIDATE;
+      }
+
+controller.start<span class="params">()</span>;<span class="comment">// 启动 View 的动画</span>
+}
+
+<span class="comment">// 绘制 ChildView</span>
+<span class="keyword">for</span> <span class="params">(int i = <span class="number">0</span>; i &lt; childrenCount; i++)</span> {
+          int childIndex = customOrder ? getChildDrawingOrder<span class="params">(childrenCount, i)</span> : i;
+          final View child = <span class="params">(preorderedList == null)</span>
+                  ? <span class="built_in">children</span>[childIndex] : preorderedList.get<span class="params">(childIndex)</span>;
+          <span class="keyword">if</span> <span class="params">(<span class="params">(child.mViewFlags &amp; VISIBILITY_MASK)</span> == VISIBLE || child.getAnimation<span class="params">()</span> != null)</span> {
+              more |= drawChild<span class="params">(canvas, child, drawingTime)</span>;
+        }
+      }
+
+
+  ...
+
+}
+
+protected boolean drawChild<span class="params">(Canvas canvas, View child, long drawingTime)</span> {
+      return child.draw<span class="params">(canvas, this, drawingTime)</span>;
+}
+
+<span class="comment">/**
+* This method is called by ViewGroup.drawChild() to have each child view draw itself.
+* This draw() method is an implementation detail and is not intended to be overridden or
+* to be called from anywhere else other than ViewGroup.drawChild().
+*/</span>
+boolean draw<span class="params">(Canvas canvas, ViewGroup parent, long drawingTime)</span> {
+    ...
+}
+</code></pre><ul>
+<li><p>drawChild(canvas, this, drawingTime)</p>
+<p>直接调用了 View 的child.draw(canvas, this,drawingTime)方法，文档中也说明了，<br>除了被ViewGroup.drawChild()方法外，你不应该在其它任何地方去复写或调用该方法，<br>它属于 ViewGroup。而View.draw(Canvas)方法是我们自定义控件中可以复写的方法，<br>具体可以参考上述对view.draw(Canvas)的说明。<br>从参数中可以看到，child.draw(canvas, this, drawingTime) 肯定是处理了和父视图相关的逻辑<br>但 View 的最终绘制，还是 View.draw(Canvas)方法。  </p>
+</li>
+<li><p>invalidate()  </p>
+<p>请求重绘 View 树，即 draw 过程，假如视图发生大小没有变化就不会调用layout()过程<br>并且只绘制那些调用了invalidate()方法的 View。  </p>
+</li>
+<li><p>requestLayout()</p>
+<p>当布局变化的时候，比如方向变化，尺寸的变化，会调用该方法，在自定义的视图中，<br>如果某些情况下希望重新测量尺寸大小，应该手动去调用该方法，<br>它会触发measure()和layout()过程，但不会进行 draw。 </p>
+</li>
+</ul>
+<p>chenzhao@hustunique.com</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/14/apologize/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          apologize
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/14/useful_xml/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">useful_xml</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="view" data-title="view" data-url="http://yoursite.com/2015/06/14/view/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 chenchen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

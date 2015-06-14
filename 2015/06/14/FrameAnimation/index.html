@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FrameAnimation | chenchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="android 动画 Frame Animation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FrameAnimation">
+<meta property="og:url" content="http://yoursite.com/2015/06/14/FrameAnimation/index.html">
+<meta property="og:site_name" content="chenchen">
+<meta property="og:description" content="android 动画 Frame Animation">
+<meta property="og:updated_time" content="2015-06-14T12:49:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FrameAnimation">
+<meta name="twitter:description" content="android 动画 Frame Animation">
+  
+    <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chenchen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">be all you can be.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 15px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/view/" style="font-size: 15px;">view</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">做好眼前的事</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chenchen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chenchen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">be all you can be.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-FrameAnimation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/14/FrameAnimation/" class="article-date">
+  	<time datetime="2015-06-14T12:27:26.000Z" itemprop="datePublished">2015-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FrameAnimation
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation/">animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frame/">frame</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="android_动画_Frame_Animation">android 动画 Frame Animation</h3><a id="more"></a> 
+<p>3.0以前，Android支持两种动画，Tween Animation,Frame Animation,<br>在android3.0中又引入了一个新的动画系统：Property Animation，<br>这三种动画模式在SDK中被称为Property Animation,View Animation,Drawable Animation<br>还有一些activity之间的过渡动画，android5.0增加的矢量动画，过渡动画。  </p>
+<h4 id="Frame_Animation">Frame Animation</h4><p>为帧动画，在android又称drawable animation，通过一系列的drawable来显示模拟动画的效果<br>android中提供了AnimationDrawable类来实现帧动画，可以用drawable当做view的背景，<br>这些配置利用XML更方便和节省内存。  </p>
+<p>步骤：<br><em>首先在res/drawable/目录下创建一个xml文件</em><br><em>文件以<animation-list>作为根节点，每一张图片都是一个<item></item></animation-list></em><br>      <animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="true"><br>          <item android:drawable="@drawable/rocket_thrust1" android:duration="200"><br>          <item android:drawable="@drawable/rocket_thrust2" android:duration="200"><br>          <item android:drawable="@drawable/rocket_thrust3" android:duration="200"><br>      </item></item></item></animation-list></p>
+<p>上面的代码中，onshot若为true，则动画只执行一次，否则动画会循环播放。<br>item中的duration用于设置当前帧的停留时间。  </p>
+<p><em>在代码里获取并启动动画。</em><br>如果上面xml的名字为thrust_test.xml. 则在代码里使用如下：  </p>
+<pre><code>AnimationDrawable testAnimation;
+
+public void onCreaet<span class="params">(Boudle savedInstanceState)</span> {
+   super.onCreate<span class="params">(savedInstanceState)</span>;
+   setContextView<span class="params">(R.layout.main)</span>;
+   ImageView image = <span class="params">(ImageView)</span> findViewById<span class="params">(R.id.image)</span>;
+   image.setBackgroundResource<span class="params">(R.drawable.thrust_test)</span>;
+   testAnimation = <span class="params">(AnimationDrawable)</span> image.getBackground<span class="params">()</span>;
+
+}
+
+public boolean onTouchEvent<span class="params">(MotionEvent event)</span> {
+   <span class="keyword">if</span> <span class="params">(event.getAction<span class="params">()</span> == MotionEvent.ACTION_DOWN)</span> {
+     testAnimation.start<span class="params">()</span>;
+     return <span class="literal">true</span>;
+   }
+   return super.onTouchEvent<span class="params">(event)</span>;
+}
+</code></pre><p>上面的代码是从资源里面获取到需要的动画，然后设置为view的背景，之后启动动画。<br>注意：动画的启动需要在view和window建立连接后才可以回执，上面的是在用户<br>触摸后（MotionEvent.ACTION_DOWN）后启动，如果需要打开界面就可以执行动画<br>则可以再activity的onWindowFocusChanged()启动。<br>也可以再代码里面加入动画：  </p>
+<pre><code>testAnimation = new AnimationDrawable<span class="params">()</span>;
+testAnimation.addFrame<span class="params">(getResources<span class="params">()</span>.getDrawable<span class="params">(R.drawable.rocket_thrust1, <span class="number">200</span>)</span>;
+testAnimation.addFrame<span class="params">(getResources<span class="params">()</span>.getDrawable<span class="params">(R.drawable.rocket_thrust2, <span class="number">200</span>)</span>;
+testAnimation.addFrame<span class="params">(getResources<span class="params">()</span>.getDrawable<span class="params">(R.drawable.rocket_thrust3, <span class="number">200</span>)</span>;
+image.setBackground<span class="params">(testAnimation)</span>;  </span></span></span>
+</code></pre><p>这里只是简单的举例一下，具体的还有待去看更多的资料。  </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/14/ViewAnimation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ViewAnimation
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/14/apologize/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">apologize</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="FrameAnimation" data-title="FrameAnimation" data-url="http://yoursite.com/2015/06/14/FrameAnimation/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 chenchen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

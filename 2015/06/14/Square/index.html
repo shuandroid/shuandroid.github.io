@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Square | chenchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="square 开源库 OkHttp的分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Square">
+<meta property="og:url" content="http://yoursite.com/2015/06/14/Square/index.html">
+<meta property="og:site_name" content="chenchen">
+<meta property="og:description" content="square 开源库 OkHttp的分析">
+<meta property="og:updated_time" content="2015-06-14T06:29:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Square">
+<meta name="twitter:description" content="square 开源库 OkHttp的分析">
+  
+    <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chenchen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">be all you can be.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 15px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/view/" style="font-size: 15px;">view</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">做好眼前的事</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chenchen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=3b03c837572c11dfcadcb771024e09b5/ae51f3deb48f8c54cd34cafb3a292df5e1fe7f7a.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chenchen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">be all you can be.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Square" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/14/Square/" class="article-date">
+  	<time datetime="2015-06-14T06:28:56.000Z" itemprop="datePublished">2015-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Square
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/square/">square</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="square_开源库_OkHttp的分析">square 开源库 OkHttp的分析</h3><a id="more"></a>
+<h4 id="看一下示例：">看一下示例：</h4><hr>
+<ul>
+<li><p>get方式请求一个URL的内容</p>
+<pre><code><span class="keyword">package</span> com.squareup.okhttp.guide;
+<span class="keyword">import</span> com.squareup.okhttp.OkHttpClient;
+<span class="keyword">import</span> com.squareup.okhttp.Request;
+<span class="keyword">import</span> com.squareup.okhttp.Response;
+improt java.io.IOException;
+
+<span class="keyword">public</span> class GetExample {
+   <span class="comment">//初始化一个OkHttpClient</span>
+   OkHttpClient client = <span class="keyword">new</span> OkHttpClient();
+   <span class="comment">//Get请求的核心方法</span>
+   <span class="keyword">String</span> run(<span class="keyword">String</span> url) <span class="keyword">throws</span> IOException {
+     <span class="comment">//生成一个request,把url放进去</span>
+     Request request = <span class="keyword">new</span> Request.Builder()
+         .url(url)
+         .build();
+     <span class="comment">//执行request，并得到response</span>
+     Response response = client.newCall(request).execute();
+     <span class="comment">//把response中的body转化为string返回</span>
+     <span class="keyword">return</span> response.body().string();
+   }
+   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> IOException {
+     GetExample example = <span class="keyword">new</span> GetExample();
+     <span class="keyword">String</span> response = example.run(<span class="string">"https://raw.github.com/square/okhttp/master/README.md"</span>);
+     System.out.<span class="built_in">println</span>(response);
+   }
+}
+</code></pre></li>
+</ul>
+<ul>
+<li><p>Post方式提交内容到服务器</p>
+<pre><code><span class="keyword">package</span> com.squareup.okhttp.guide;
+improt com.squareup.okhttp.MediaType;
+improt com.squareup.okhttp.OkHttpClient;
+<span class="keyword">import</span> com.squareup.okhttp.Request;
+<span class="keyword">import</span> com.squareup.okhttp.RequestBody;
+<span class="keyword">import</span> com.squareup.okhttp.Response;
+improt java.io.IOException;
+<span class="keyword">public</span> class PostExample {
+  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> MediaType JSON
+      = MediaType.parse(<span class="string">"application/json; charset=utf-8"</span>);
+  <span class="comment">//初始化一个OkHttpClient</span>
+  OkHttpClient client = <span class="keyword">new</span> OkHttpClient();
+  <span class="comment">//post请求的核心方法</span>
+  <span class="keyword">String</span> post(<span class="keyword">String</span> url, <span class="keyword">String</span> json) <span class="keyword">throws</span> IOException {
+    <span class="comment">//创建一个Json格式的请求body</span>
+    RequestBody body = RequestBody.create(JSON, json);
+    <span class="comment">//生成一个request，把url和body放进去</span>
+    Request request = <span class="keyword">new</span> Request.Builder()
+        .url(url)
+        .post(body)
+        .build();
+    <span class="comment">//执行request，并得到response</span>
+    Response response = client.newCall(request).execute();
+    <span class="comment">//把response中的body转化成string返回</span>
+    <span class="keyword">return</span> response.body().string();
+  }
+  <span class="comment">//模拟一段测试的Json数据</span>
+  <span class="keyword">String</span> bowlingJson(<span class="keyword">String</span> player1, <span class="keyword">String</span> player2) {
+    <span class="keyword">return</span> <span class="string">"{'winCondition':'HIGH_SCORE',"</span>
+        + <span class="string">"'name':'Bowling',"</span>
+        + <span class="string">"'round':4,"</span>
+        + <span class="string">"'lastSaved':1367702411696,"</span>
+        + <span class="string">"'dateStarted':1367702378785,"</span>
+        + <span class="string">"'players':["</span>
+        + <span class="string">"{'name':'"</span> + player1 + <span class="string">"','history':[10,8,6,7,8],'color':-13388315,'total':39},"</span>
+        + <span class="string">"{'name':'"</span> + player2 + <span class="string">"','history':[6,10,5,10,10],'color':-48060,'total':41}"</span>
+        + <span class="string">"]}"</span>;
+  }
+
+  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) <span class="keyword">throws</span> IOException {
+    PostExample example = <span class="keyword">new</span> PostExample();
+    <span class="keyword">String</span> json = example.bowlingJson(<span class="string">"Jesse"</span>, <span class="string">"Jake"</span>);
+    <span class="keyword">String</span> response = example.post(<span class="string">"http://www.roundsapp.com/post"</span>, json);
+    System.out.<span class="built_in">println</span>(response);
+  }
+</code></pre></li>
+</ul>
+<pre><code>}
+</code></pre><ul>
+<li>[网页链接：](<a href="http://lzyblog.com/2014/10/30/Square开源库OkHttp的分析和使用（一）/" target="_blank" rel="external">http://lzyblog.com/2014/10/30/Square开源库OkHttp的分析和使用（一）/</a></li>
+</ul>
+<h4 id="调用(calls)">调用(calls)</h4><hr>
+<p>  HTTP客户端的工作就是接受你的request并产生response。</p>
+<ul>
+<li>Request</li>
+</ul>
+<ul>
+<li><p>Response</p>
+<p>利用一个code来响应一个请求，response也包括一个头部（headers）和一个可选的实体(body)</p>
+</li>
+</ul>
+<h4 id="改写请求(Rewriting_Requests)">改写请求(Rewriting Requests)</h4><hr>
+<p>   请求利用头部的headers的URL来抓取信息，为了保证正确性和效率，OkHttp会在发送前改写你的请求。</p>
+<h4 id="改写响应(Rewriting_responses)">改写响应(Rewriting responses)</h4><hr>
+<p>  get请求成功，网络返回的响应和缓存中的响应将会被合并。</p>
+<h4 id="跟进请求(Follow-up_Requests)">跟进请求(Follow-up Requests)</h4><hr>
+<ul>
+<li><p>当你请求的URL已经转移，服务器将返回一个响应代码(302)表示文档所在的新的URL。</p>
+<p> OKHttp将跟随重定向去取得最终的Response。</p>
+<p> 如果响应遇到一个关于授权的挑战，OKHttp会通过Authenticator(如果这个是配置好的)来满足这个挑战</p>
+<p> 如果Authenticator提供了一个凭证，Request就会用这个凭证去重试。</p>
+</li>
+</ul>
+<h4 id="重试请求(Retrying_Requests)">重试请求(Retrying Requests)</h4><hr>
+<ul>
+<li>有时连接会失败：有可能是一个池的连接不新鲜或连接断开了，也有可能是服务器本身不能到达。如果有一个可用的不同的路由，OKHttp将重试这个请求。</li>
+</ul>
+<h4 id="调用(Calls)">调用(Calls)</h4><hr>
+<p>  通过上面的改写，重定向，跟进和重试，你简单的请求可能会产生很多的请求和响应。OKHttp使用Call去满足你的Request的任   务是必要的(不管通过了多少中间的请求和响应)。通常中间的请求和响应不会很多，更令人欣喜的是，如果你的URL重定向了或   者是转移到到另一个IP地址，你的HTTP请求代码将会继续工作。</p>
+<p>  Calls有以下两种执行方式：</p>
+<ul>
+<li>同步： 你的线程会一直阻塞到直到Response到达。</li>
+<li><p>异步： 你可以在任何线程中排队请求。当Response到达时，你将在另一个线程中获得回调。</p>
+<p>Calls可以任何线程中取消。如果这个请求尚未完成，它将返回失败。如果代码中正在write一个request<br>body或者是正在read一个response body，这时候你取消了这个请求，就会得到IOException的异常。</p>
+</li>
+</ul>
+<h4 id="调度(dispatch)">调度(dispatch)</h4><hr>
+<p> 对于同步调用,你通过自己的线程管理并发请求。注意，太多的并发连接浪费资源;太少的并发连接导致延。</p>
+<p>   对于异步调用,调度器实现了最大化的并发请求策略。你可以设置per-webserver(默认为5)和overall(默认是64)的最大值。</p>
+<h4 id="连接(Connections)">连接(Connections)</h4><hr>
+<p>OkHttp和你的服务器时会使用三样东西：URL、地址和线路。</p>
+<h4 id="URLs">URLs</h4><hr>
+<p>这部分不明白的太多，先放在这里。<br>[connections]{<a href="http://lzyblog.com/2014/12/23/Square%E5%BC%80%E6%BA%90%E5%BA%93OKHttp%E7%9A%84%E5%88%86%E6%9E%90%E5%92%8C%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%89%EF%BC%89/}" target="_blank" rel="external">http://lzyblog.com/2014/12/23/Square%E5%BC%80%E6%BA%90%E5%BA%93OKHttp%E7%9A%84%E5%88%86%E6%9E%90%E5%92%8C%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%89%EF%BC%89/}</a></p>
+<h3 id="done-">done.</h3><p>chenzhao@hustunique.com</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/14/useful_xml/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          useful_xml
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/14/MaterialDesign/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MaterialDesign</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Square" data-title="Square" data-url="http://yoursite.com/2015/06/14/Square/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 chenchen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
