@@ -20,7 +20,28 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/2.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/3.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/4.gif">
-<meta property="og:updated_time" content="2015-07-16T13:18:00.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/5.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/6.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/7.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/8.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/9.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/10.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/6.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/7.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/8.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/9.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/10.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/11.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/13.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/15.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/16.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/17.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/18.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/19.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/20.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/21.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/22.gif">
+<meta property="og:updated_time" content="2015-07-20T11:11:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DesignSupportLibrary">
 <meta name="twitter:description" content="android design supprot library几行代，让app更优雅。">
@@ -289,7 +310,310 @@ fabBtn.setOnClickListener(<span class="keyword">new</span> View.OnClickListener(
 <span class="tag">&lt;<span class="title">dimen</span> <span class="attribute">name</span>=<span class="value">"codelab_fab_margin_bottom"</span>&gt;</span>0.1dp<span class="tag">&lt;/<span class="title">dimen</span>&gt;</span>
 </code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/4.gif" alt="">  </p>
 <p>如果计划使用android design support library， 要注意CoordinatorLayout,<br>它就像是整个library的核心。  </p>
-<h5 id="使用toolbar代替actionbar">使用toolbar代替actionbar</h5>
+<h5 id="使用toolbar代替actionbar">使用toolbar代替actionbar</h5><p>在style属性里面隐藏actionbar： </p>
+<pre><code>&lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"Theme.App.Compat.Light.DarkActionBar"</span>&gt;
+     &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"windowActionBar"</span>&gt;<span class="constant">false</span>&lt;/<span class="property">item</span>&gt;
+     &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"windowNoTitle"</span>&gt;<span class="constant">true</span>&lt;/<span class="property">item</span>&gt;
+&lt;/style&gt;   
+</code></pre><p>然后在CoordinatorLayout里面的FAB之前正确的放一个toolbar组件。  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CoordinatorLayout</span>
+     ...&gt;
+     &lt;android<span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+          android:id=<span class="string">"@+id/toolbar"</span>
+          android:layout_width=<span class="string">"match_parent"</span>
+          android:layout_height=<span class="string">"?attr/actionBarSize"</span>
+          android:<span class="attribute">background</span>=<span class="string">"?attr/colorPrimary"</span>
+          app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span>
+          app:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span>
+          /&gt;
+     &lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.FloatingActionButton</span>
+          ...&gt;
+     &lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.FloatingActionButton</span>&gt;
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CoordinatorLayout</span>&gt;     
+</code></pre><p>现在要在.java里面说明，要使用toolbar:  </p>
+<pre><code>Toolbar toolbar;
+private void initInstances<span class="params">()</span> {
+     toolbar = <span class="params">(Toolbar)</span> findViewById<span class="params">(R.id.toolbar)</span>;
+     setSupportActionBar<span class="params">(toolbar)</span>;
+     ...
+}
+</code></pre><p>由于放在CoordinatorLayout的东西必须被设计和实现成与它一起合作，否则将不与其view协作。<br>但是toolbar是不合适的，所以准备了另外一个组件AppBarLayout包裹toolbar：  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CoordinatorLayout</span>
+     ...&gt;
+     &lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span>
+          android:layout_width=<span class="string">"match_parent"</span>
+          android:layout_height=<span class="string">"wrap_content"</span>&gt;
+          &lt;android<span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+               ...&gt;
+     &lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.FloatingActionBar</span>
+          ...&gt;
+     &lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.FloatingActionBar</span>     
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CoordinatorLayout</span>     
+</code></pre><p>现在就可以了！<br>          <img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/5.gif" alt=""></p>
+<h5 id="在内容区域里放东西。">在内容区域里放东西。</h5><p>放两个button，  </p>
+<pre><code>     ...
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span>&gt;
+&lt;LinearLayout
+     android:layout_width=<span class="string">"match_parent"</span>
+     android:layout_height=<span class="string">"match_parent"</span>
+     android:orientation=<span class="string">"vertical"</span>&gt;
+     &lt;Button
+          android:layout_width=<span class="string">"wrap_content"</span>
+          android:layout_height=<span class="string">"wrap_content"</span>
+          android:text=<span class="string">"Yo Yo"</span>/&gt;
+     &lt;Button
+          android:layout_width=<span class="string">"wrap_content"</span>
+          android:layout_height=<span class="string">"wrap_content"</span>
+          android:text=<span class="string">"Yo Yo"</span>/&gt;
+&lt;/LinearLayout&gt;
+&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.FloatingActionButton</span>
+     ...&gt;
+</code></pre><p><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/6.jpg" alt=""><br>这些按钮放在了toolbar的下面，，有些不协调。<br>这是因为linearlayout没有被设计成与CoordinatorLayout协同工作，类似与之前的toolbar，<br>它的解决方法更简单一些，在linearlayout里面添加一个属性，告诉它滚动的行为：  </p>
+<pre><code><span class="subst">&lt;</span>LinearLayout
+     <span class="attribute">...</span>
+     app:layout_behavior<span class="subst">=</span><span class="string">"@string/appbar_scrolling_view_behavior"</span>
+     <span class="attribute">...</span><span class="subst">&gt;</span>
+</code></pre><p>现在就可以了：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/7.jpg" alt="">  </p>
+<h5 id="TabLayout">TabLayout</h5><p>应该把tab放在屏幕的顶部而不是底部，它应该在阴影部分的上面，所以应该把它放在<br>AppBarLayout(里面有toolbar)里面，沿着toolbar，这是可行的，因为AppBarLayout<br>是继承一个垂直的LinearLayout.  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span> ...&gt;
+     &lt;android<span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span> ... /&gt;
+     &lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TabLayout</span>
+          android:id=<span class="string">"@+id/tabLayout"</span>
+          android:layout_width=<span class="string">"match_parent"</span>
+          android:layout_height=<span class="string">"wrap_content"</span>/&gt;
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span>&gt;
+</code></pre><p>在Java里面添加一些tabs  </p>
+<pre><code>TabLayout tabLayout;
+private void initInstances<span class="params">()</span> {
+     tabLayout = <span class="params">(TabLayout)</span> findViewById<span class="params">(R.id.tabLayout)</span>;
+     tabLayout.addTab<span class="params">(tabLayout.newTab<span class="params">()</span>.setText<span class="params">(<span class="string">"Tab 1"</span>)</span>)</span>;
+     tabLayout.addTab<span class="params">(tabLayout.newTab<span class="params">()</span>.setText<span class="params">(<span class="string">"Tab 2"</span>)</span>)</span>;
+     tabLayout.addTab<span class="params">(tabLayout.newTab<span class="params">()</span>.setText<span class="params">(<span class="string">"Tab 3"</span>)</span>)</span>;
+     ...
+}
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/8.jpg" alt=""><br>背景色会自动设置为primary color(主题色)，而导航线的颜色则是强调色，<br>tab的字体颜色仍然是黑色的，希望是白色的，在tablayout添加属性：  </p>
+<pre><code>&lt;<span class="tag">android</span><span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TabLayout</span>
+     ...
+     <span class="rule"><span class="attribute">app</span>:<span class="value">theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span> /&gt;</span></span>
+</code></pre><p>现在是白色的了，结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/9.jpg" alt=""><br>可以像上面那样手动控制tabLayout，或者让它和viewPager一起工作，自动调用<br>setupWithViewPager()…  </p>
+<p>调整两个属性来显示TabLayout:<br>app:tabMode 如果想在屏幕上显示每个单独的tab，就设置tab为fixed；<br>只适合少数的tab，或者设置为scrollable让用户去滚动tab，想GooglePlayStroe.  </p>
+<p>app:tabGravity 如果想要分配所有的空间给每个tab，则设置这个属性为fill，<br>如果想要所有的tab在屏幕的中间设为center，注意如果tabMode设为scrollable，<br>则这个属性被忽略。<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/10.jpg" alt="">  </p>
+<h5 id="当随着内容滚动时，让AppBarLayout退出屏幕">当随着内容滚动时，让AppBarLayout退出屏幕</h5><p>让AppBar可以随着内容滚出屏幕，来获得更多的空间显示内容。<br>首先在linearLayout里面多加几个button，使屏幕需要滚动，<br>然后用ScrollView 包裹这个linearLayout,不要忘记把linearLayout里面的<br>layout_behavior 移动到ScrollView,因为现在ScrollView是CoordinatorLayout的<br>最直接的子view。  </p>
+<pre><code>&lt;ScrollView
+     android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span>
+     android:<span class="variable">layout_height=</span><span class="string">"match_parent"</span>
+     android:<span class="variable">fillViewport=</span><span class="string">"true"</span>
+     app:<span class="variable">layout_behavior=</span><span class="string">"@string/appbar_scrolling_view_behavior"</span>&gt;
+     &lt;LinearLayout
+          android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span>
+          android:<span class="variable">layout_height=</span><span class="string">"match_parent"</span>
+          android:<span class="variable">orientation=</span><span class="string">"vertical"</span>&gt;
+          ...
+     &lt;/LinearLayout&gt;
+&lt;/ScrollView&gt;
+</code></pre><p>然后为toolbar添加一个滚动的标志，  </p>
+<pre><code>&lt;<span class="tag">android</span>,<span class="tag">support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+     ...
+     <span class="rule"><span class="attribute">app</span>:<span class="value">layout_scrollFlags=<span class="string">"scroll|enterAlways"</span> /&gt;</span></span>
+</code></pre><p>结果为：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/6.gif" alt=""><br>toolbar并没有随着内容而滚出屏幕，原因和上面一样，因为ScrollView没有设计成与<br>CoordinatorLayout协同工作，需要利用另外一个view： NestedScrollView,Android<br>Support Library v4 里有提供，设计出来的目的就是为了与CoordinatorLayout协同<br>工作的。  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.v4</span><span class="class">.widget</span><span class="class">.NestedScrollView</span>
+     ...&gt;
+     &lt;LinearLayout
+          ...&gt;
+     &lt;/LinearLayout&gt;
+
+&lt;/android<span class="class">.support</span><span class="class">.v4</span><span class="class">.widget</span><span class="class">.NestedScrollView</span>&gt;
+</code></pre><p>注意：listview也是和CoordinatorLayout不能协同工作的，只有recyclerView可以。<br>以后的发展也许会的。<br>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/7.gif" alt=""><br>注意到toolbar滚出了屏幕，但tabLayout仍然还在，因为没有给tabLayout<br>设置任何滚动标志，如果想要tablayout也在屏幕上消失，只需要设置属性：  </p>
+<pre><code>&lt;<span class="tag">android</span><span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TabLayout</span>
+     ...
+     <span class="rule"><span class="attribute">app</span>:<span class="value">layout_scrollFlags=<span class="string">"scroll|enterAlways"</span> /&gt;</span></span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/8.gif" alt=""><br>这里会有一些手势上的bug，把它拉回屏幕是很困难的，要等下一个版本修复了。<br>看一下四个属性值：<br>scroll 设置这个view随着内容滚动，<br>enterAlwaysCollapsed 定义view是如何回到屏幕的，当view已经声明了一个最小高度<br>（minHeight）并且使用了这个标志，那么view只有回到最小高度的时候才会展开，<br>只有当view已经到达顶部后它才会重新展开全部高度，滚动标志这样使用：<br>scroll|enterAlwaysCollapsed<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/9.gif" alt="">  </p>
+<p>enterAlways 这个标志确保了任何向下滚动的操作都会让这个view变得可见，达到快速返回<br>（quick return）的效果，使用：scroll|enterAlways<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/10.gif" alt="">  </p>
+<p>exitUntilCollapsed view 将关闭滚动知道它被折叠起来（有minHeight）并且一直保持这样。<br>例如：  </p>
+<pre><code>&lt;<span class="tag">android</span><span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+     ...
+     <span class="rule"><span class="attribute">android</span>:<span class="value">layout_height=<span class="string">"192dp"</span>
+     app:layout_scrollFlags=<span class="string">"scroll|exitUntilCollapsed"</span>
+     android:gravity=<span class="string">"bottom"</span>
+     android:paddingBottom=<span class="string">"12dp"</span>
+     android:minHeight=<span class="string">"?attr/actionBarSize"</span></span></span>
+</code></pre><p>结果如下：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/11.gif" alt="">  </p>
+<h5 id="为了实现其他的功能,先移除TabLayout">为了实现其他的功能,先移除TabLayout</h5><p>在布局里面删掉：  </p>
+<pre><code><span class="comment">&lt;!--android.support.design.widget.TabLayout --&gt;</span>
+</code></pre><p>在Java里面，删除：  </p>
+<pre><code>//tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+//tabLayout.addTab(tabLayout.newTab().<span class="built_in">set</span>Text(<span class="string">"Tab 1"</span>));
+//tabLayout.addTab(tabLayout.newTab().<span class="built_in">set</span>Text(<span class="string">"Tab 2"</span>));
+//tabLayout.addTab(tabLayout.newTab().<span class="built_in">set</span>Text(<span class="string">"Tab 3"</span>));
+</code></pre><h5 id="Make_toobar_collapsable_使toolbar可折叠">Make toobar collapsable 使toolbar可折叠</h5><p>就像在exitUnitilCollapsed所示的例子，toolbar可以展开折叠，但是toolbar仍然<br>离开了屏幕，最好的体验是让这些icon应该留在屏幕内。  </p>
+<p>Design Support Library已经为这个准备好了，利用CollapsingToolbarLayout可以让toolbar<br>折叠起来，像其他组件一样，具体操作如下：  </p>
+<ul>
+<li>用collapsingToolbarLayout 包裹toolbar，但仍然在AppBarLayout里面  </li>
+<li>从toolbar中删除layout_scrollFlags </li>
+<li>为collapsingToolbarLayout声明layout_scrollFlags,并且将layout_scrollFlags设置成<br>scroll|exitUntilCollapsed  </li>
+<li>改变AppBarLayout扩张状态时的布局高度大小，这里使用256dp</li>
+</ul>
+<p>最终代码：  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span>
+     &lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CollapsingToolbarLayout</span>
+          android:id=<span class="string">"@+id/collapsingToolbarLayout"</span>
+          android:layout_width=<span class="string">"match_parent"</span>
+          android:layout_height=<span class="string">"match_parent"</span>
+          app:layout_scrollFlags=<span class="string">"scroll|exitUntilCollapsed"</span>&gt;
+          &lt;android<span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+               android:id=<span class="string">"@+id/toolbar"</span>
+               android:layout_width=<span class="string">"match_parent"</span>
+               android:layout_height=<span class="string">"?attr/actionBarSize"</span>
+               android:<span class="attribute">background</span>=<span class="string">"?attr/colorPrimary"</span>
+               android:minHeight=<span class="string">"?attr/actionBarSize"</span>
+               app:layout_collapseMode=<span class="string">"pin"</span>
+               app:theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span>
+               app:popupTheme=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span> /&gt;
+     &lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CollapsingToolbarLayout</span>&gt;
+ &lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.AppBarLayout</span>&gt;    
+</code></pre><p>这里的结果是：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/13.gif" alt=""><br>如果没有app:layout_collapseMode=”pin”，则toolbar icon仍然会滚出屏幕。<br>但是现在没有标题文字了，因为在用CollapsingToolbarLayout包裹tool后，它就没有了，<br>需要在.java里面手动设置：  </p>
+<pre><code>collapsingToolbarLayout = <span class="params">(CollapsingToolbarLayout)</span> findViewById<span class="params">(R.id.collapsingToolbarLayout)</span>;
+collapsingToolbarLayout.setTitle<span class="params">(<span class="string">"Design Library"</span>)</span>;
+</code></pre><p>这时标题字体是黑色的，这是没有对AppBar设置主题，在xml里面的AppBarLayout里面加一句：  </p>
+<pre><code><span class="label">android:</span>theme=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/15.gif" alt="">  </p>
+<p>由于CollapsingToolbarLayout 的 特点，应用的标题文字在收缩和展开状态是会自动过渡的，<br>想要在展开状态改变标题文字的位置，则可以通过应用的 margin 的四个属性，<br>app:expandedTitleMargin, app:expandedTitleMarginBottom, app:expandedTitleMarginEnd<br>以及 app:expandedTitleMarginStart  </p>
+<p>想要在折叠和展开状态时改变文本的显示，可以这样来简单的实现：<br>设置TextAppence分别通过 app:collapsedTitleTextAppearance 和<br>app:expandedTitleTextAppearance 来设置。  </p>
+<p>设置margin为64dp   </p>
+<pre><code>&lt;<span class="tag">android</span><span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CollapsingToolBarLayout</span>
+     ...
+     <span class="rule"><span class="attribute">app</span>:<span class="value">expandedTitleMarginStart=<span class="string">"64dp"</span></span></span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/16.gif" alt="">  </p>
+<h5 id="为appBar添加图片">为appBar添加图片</h5><p>CollapsingToolbarLayout 是继承自 FrameLayout，可以添加一个ImageView作为<br>toolbar的背景图片：  </p>
+<pre><code>&lt;ImageView
+     android:layout_width=<span class="string">"match_parent"</span>
+     android:layout_height=<span class="string">"match_parent"</span>
+     android:scaleType=<span class="string">"centerCrop"</span>
+     android:src=<span class="string">"@drawable/header"</span> /&gt;
+&lt;android<span class="class">.support</span><span class="class">.v7</span><span class="class">.widget</span><span class="class">.Toolbar</span>
+     ...
+</code></pre><p>这里结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/17.gif" alt=""><br>蓝色的导航条仍旧显示着,这是要解决的问题，有一个 Toolbar 的背景看起来不是酷炫，<br>从 Toolbar 移除它，只需要下面这行代码就行了：  </p>
+<pre><code><span class="label">android:</span>background=<span class="string">"?attr/colorPrimary"</span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/18.gif" alt=""><br>基本是实现了，但是看起来太呆，采用视差模式可以更加优雅，<br>只需声明 collapse 就行了：</p>
+<pre><code><span class="tag">&lt;<span class="title">ImageView</span>
+     <span class="attribute">...</span>
+     <span class="attribute">app:layout_collapseMode</span>=<span class="value">"parallax"</span> /&gt;</span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/19.gif" alt="">  </p>
+<p>可自行设置视差系数，在0.0-1.0 之间。  </p>
+<pre><code><span class="label">app:</span>layout_collapseParallaxMultiplier=<span class="string">"0.7"</span>
+</code></pre><p>注意到 App Bar 的背景总显示一张图片, 可以让它在收缩的时候自动恢复到普通的颜色，<br>通过声明属性： app:contentScrim  </p>
+<pre><code>&lt;<span class="tag">android</span><span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CollapsingToolbarLayout</span>
+     ...
+     <span class="rule"><span class="attribute">app</span>:<span class="value">contentScrim=<span class="string">"?attr/colorPrimary"</span>&gt;</span></span>
+</code></pre><p>结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/20.gif" alt="">  </p>
+<h5 id="Navigation_Drawer_侧滑">Navigation Drawer 侧滑</h5><p>首先，为Drawer Menu创建一个标题布局文件：  </p>
+<h6 id="res/layout/nav_header-xml">res/layout/nav_header.xml</h6><pre><code>&lt;?xml <span class="variable">version=</span><span class="string">"1.0"</span> <span class="variable">encoding=</span><span class="string">"utf-8"</span>?&gt;
+&lt;FrameLayout xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>
+     android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span>
+     android:<span class="variable">layout_height=</span><span class="string">"192dp"</span>
+     android:<span class="variable">theme=</span><span class="string">"@style/ThemeOverlay.AppCompat.Dark"</span>&gt;
+     &lt;ImageView
+          android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span>
+          android:<span class="variable">layout_height=</span><span class="string">"match_parent"</span>
+          android:<span class="variable">src=</span><span class="string">"@drawable/nav_header_bg"</span>
+          android:<span class="variable">scaleType=</span><span class="string">"centerCrop"</span> /&gt;
+     &lt;ImageView
+          android:<span class="variable">layout_width=</span><span class="string">"wrap_content"</span>
+          android:<span class="variable">layout_height=</span><span class="string">"wrap_content"</span>
+          android:<span class="variable">src=</span><span class="string">"@drawable/nuuneoi"</span>
+          android:<span class="variable">layout_gravity=</span><span class="string">"bottom"</span>
+          android:<span class="variable">layout_marginBottom=</span><span class="string">"36dp"</span> /&gt;
+     &lt;TextView
+          android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span>
+          android:<span class="variable">layout_height=</span><span class="string">"wrap_content"</span>
+          android:<span class="variable">layout_gravity=</span><span class="string">"bottom"</span>
+          android:<span class="variable">layout_margin=</span><span class="string">"16dp"</span>
+          android:<span class="variable">text=</span><span class="string">"nuuneoi"</span>
+          android:<span class="variable">textAppearance=</span><span class="string">"@style/TextAppearance.AppCompat.Body1"</span>/&gt;
+&lt;/FrameLayout&gt;  
+</code></pre><p>创建一个菜单资源文件：  </p>
+<h6 id="res/menu/navigation_drawer_items-xml">res/menu/navigation_drawer_items.xml</h6><pre><code><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="tag">&lt;<span class="title">menu</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">group</span> <span class="attribute">android:checkableBehavior</span>=<span class="value">"all"</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">item</span>
+        <span class="attribute">android:id</span>=<span class="value">"@+id/navItem1"</span>
+        <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_action_location_found_dark"</span>
+        <span class="attribute">android:title</span>=<span class="value">"Home"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">item</span>
+        <span class="attribute">android:id</span>=<span class="value">"@+id/navItem2"</span>
+        <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_action_location_found_dark"</span>
+        <span class="attribute">android:title</span>=<span class="value">"Blog"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">item</span>
+       <span class="attribute">android:id</span>=<span class="value">"@+id/navItem3"</span>
+       <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_action_location_found_dark"</span>
+       <span class="attribute">android:title</span>=<span class="value">"About"</span>/&gt;</span>
+    <span class="tag">&lt;<span class="title">item</span>
+       <span class="attribute">android:id</span>=<span class="value">"@+id/navItem4"</span>
+       <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_action_location_found_dark"</span>
+       <span class="attribute">android:title</span>=<span class="value">"Contact"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">group</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">menu</span>&gt;</span>
+</code></pre><p>naviagtion与两个资源文件绑定起来，作为 Drawer Menu的菜单区域<br>用下面的代码代替已经存在的白色的LinearLayout:  </p>
+<pre><code>     ...
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.CoordinatorLayout</span>&gt;
+&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.NavigationView</span>
+   android:id=<span class="string">"@+id/navigation"</span>
+   android:layout_width=<span class="string">"wrap_content"</span>
+   android:layout_height=<span class="string">"match_parent"</span>
+   android:layout_gravity=<span class="string">"start"</span>
+   app:headerLayout=<span class="string">"@layout/nav_header"</span>
+   app:itemIconTint=<span class="string">"#333"</span>
+   app:itemTextColor=<span class="string">"#333"</span>
+   app:menu=<span class="string">"@menu/navigation_drawer_items"</span> /&gt;
+&lt;/android<span class="class">.support</span><span class="class">.v4</span><span class="class">.widget</span><span class="class">.DrawerLayout</span>&gt;
+</code></pre><p>现在就可以利用Drawer Menu.<br>效果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/21.gif" alt="">  </p>
+<p>为了处理菜单项的点击事件，声明setNavigationItemSelectedListener来监听，  </p>
+<pre><code>Navigation navigation;
+<span class="keyword">private</span> <span class="typename">void</span> initInstances() {
+     ...
+     navigation = (NavigationView) findViewById(R.id.navigation);
+     navigation.setNavigationItemSelectedListener(<span class="keyword">new</span> NavigationView.OnNavigationItemSelectedListener() {
+          <span class="annotation">@Override</span>
+          <span class="keyword">public</span> <span class="typename">boolean</span> onNavigationItemSelected(MenuItem menuItem) {
+               <span class="typename">int</span> id = menuItem.getItemId();
+               <span class="keyword">switch</span> (id) {
+                    <span class="keyword">case</span> R.id.<span class="string">navItem1:</span>
+                         <span class="keyword">break</span>;
+                    <span class="keyword">case</span> R.id.<span class="string">navItem2:</span>
+                         <span class="keyword">break</span>;
+                    <span class="keyword">case</span> R.id.<span class="string">navItem3:</span>
+                         <span class="keyword">break</span>;
+               }
+               <span class="keyword">return</span> <span class="literal">false</span>;
+          }
+     });
+
+}     
+</code></pre><p>在实际使用中，可以随意声明你想要定义的header view和修改菜单项。  </p>
+<h5 id="添加TextInputLayout">添加TextInputLayout</h5><p>替换旧的editText，让风格升级，<br>需要用TextInputLayout包裹住一个editText,  </p>
+<pre><code>&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span>
+     android:layout_width=<span class="string">"match_parent"</span>
+     android:layout_height=<span class="string">"wrap_content"</span>&gt;
+      &lt;EditText
+          android:layout_width=<span class="string">"match_parent"</span>
+          android:layout_height=<span class="string">"wrap_content"</span>
+          android:hint=<span class="string">"Username"</span> /&gt;
+&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span>&gt;          
+</code></pre><p>在里面再次添加一个password的editText，<br>然后把这两个控件放到NestedScrollView看结果：<br><img src="https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/22.gif" alt="">  </p>
+<h4 id="后记">后记</h4><p>这【篇总结是我看着另外一个作者的博客，一点一点写下来的，我自己之前已经在<br>android studio上实现了这个效果，感觉这个真的很棒，很赞，<br>便自己记录下来，也学到了一些东西，希望在不久这些很优雅的APP更多。</p>
+<p>注：用的到的地方</p>
+<pre><code><span class="xml"><span class="tag">&lt;<span class="title">android.support.design.widget.TabLayout</span>
+     <span class="attribute">android:id</span>=<span class="value">"@+id/tabs"</span>
+     &lt;!<span class="attribute">--Tab</span>被选中字体的颜色<span class="attribute">--</span>&gt;</span>
+     app:tabSelectedTextColor="@android:color/holo_blue_bright"
+     <span class="comment">&lt;!--Tab未被选中字体的颜色--&gt;</span>
+     app:tabTextColor="@android:color/black"
+     <span class="comment">&lt;!--Tab指示器下标的颜色--&gt;</span>
+     app:tabIndicatorColor="@android:color/holo_blue_bright"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" /&gt;</span>
+</code></pre><p>chenzhao@hustunique.com</p>
+
       
     </div>
     
