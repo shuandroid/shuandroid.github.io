@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>useful_xml | chenchen</title>
+  <title>netWork | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些常用的xml">
+  <meta name="description" content="关于在android上面的联网判断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="useful_xml">
-<meta property="og:url" content="http://yoursite.com/2015/06/14/useful_xml/index.html">
+<meta property="og:title" content="netWork">
+<meta property="og:url" content="http://yoursite.com/2015/09/10/netWork/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="一些常用的xml">
-<meta property="og:updated_time" content="2015-06-14T12:30:17.000Z">
+<meta property="og:description" content="关于在android上面的联网判断">
+<meta property="og:updated_time" content="2015-09-10T08:53:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="useful_xml">
-<meta name="twitter:description" content="一些常用的xml">
+<meta name="twitter:title" content="netWork">
+<meta name="twitter:description" content="关于在android上面的联网判断">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +161,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-useful_xml" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-netWork" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/14/useful_xml/" class="article-date">
-  	<time datetime="2015-06-14T12:25:09.000Z" itemprop="datePublished">2015-06-14</time>
+      <a href="/2015/09/10/netWork/" class="article-date">
+  	<time datetime="2015-09-10T08:50:56.000Z" itemprop="datePublished">2015-09-10</time>
 </a>
     </div>
   
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      useful_xml
+      netWork
     </h1>
   
 
@@ -187,7 +187,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anim/">anim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xml/">xml</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/netWork/">netWork</a></li></ul>
 	</div>
 
         
@@ -198,71 +198,72 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一些常用的xml">一些常用的xml</h2><a id="more"></a>
-<h4 id="anim">anim</h4><h5 id="fragment_in-xml">fragment_in.xml</h5><pre><code>&lt;?xml <span class="variable">version=</span><span class="string">"1.0"</span> <span class="variable">encoding=</span><span class="string">"utf-8"</span>?&gt;
-&lt;set xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;
-    &lt;scale
-        android:<span class="variable">fromXScale=</span><span class="string">"0.0"</span>
-        android:<span class="variable">fromYScale=</span><span class="string">"0.0"</span>
-        android:<span class="variable">pivotX=</span><span class="string">"50%"</span>
-        android:<span class="variable">pivotY=</span><span class="string">"50%"</span>
-        android:<span class="variable">toXScale=</span><span class="string">"1.0"</span>
-        android:<span class="variable">toYScale=</span><span class="string">"1.0"</span>
-        android:<span class="variable">duraction=</span><span class="string">"500"</span> /&gt;
-    &lt;alpha
-        android:<span class="variable">duraction=</span><span class="string">"500"</span>
-        android:<span class="variable">fromAlpha=</span><span class="string">"0"</span>
-        android:<span class="variable">toAlpha=</span><span class="string">"1"</span> /
-&lt;/set&gt;        
-</code></pre><p>  与它配套的是：fragment_out.xml  </p>
-<pre><code>&lt;?xml <span class="variable">version=</span><span class="string">"1.0"</span> <span class="variable">encoding=</span><span class="string">"utf-8"</span>?&gt;
-&lt;set xmlns:<span class="variable">android=</span><span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;
-    &lt;scale
-        android:<span class="variable">fromXScale=</span><span class="string">"1.0"</span>
-        android:<span class="variable">fromYScale=</span><span class="string">"1.0"</span>
-        android:<span class="variable">pivotX=</span><span class="string">"50%"</span>
-        android:<span class="variable">pivotY=</span><span class="string">"50%"</span>
-        android:<span class="variable">toXScale=</span><span class="string">"0.0"</span>
-        android:<span class="variable">toYScale=</span><span class="string">"0.0"</span>
-        android:<span class="variable">duraction=</span><span class="string">"500"</span> /&gt;
-    &lt;alpha
-        android:<span class="variable">duraction=</span><span class="string">"500"</span>
-        android:<span class="variable">fromAlpha=</span><span class="string">"1"</span>
-        android:<span class="variable">toAlpha=</span><span class="string">"0"</span> /
-&lt;/set&gt;     
-</code></pre><p>详解：  alpha为渐变动画，scale 为伸缩动画，这个是结合了两者的效果，伸缩的同时，<br>产生动画。</p>
-<h4 id="进入和进出动画">进入和进出动画</h4><h5 id="左进右出">左进右出</h5><p>当点击进入的按钮时，通常是左进右出<br>move_left_in.xml  </p>
-<pre><code><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="tag">&lt;<span class="title">translate</span>
-    <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="attribute">android:duration</span>=<span class="value">"300"</span>
-    <span class="attribute">android:fromXDelta</span>=<span class="value">"-100%p"</span>
-    <span class="attribute">android:toXDelta</span>=<span class="value">"0%p"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">translate</span>&gt;</span>
-</code></pre><p> move_right_out.xml  </p>
-<pre><code><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="tag">&lt;<span class="title">translate</span>
-    <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="attribute">android:duration</span>=<span class="value">"300"</span>
-    <span class="attribute">android:fromXDelta</span>=<span class="value">"-0%p"</span>
-    <span class="attribute">android:toXDelta</span>=<span class="value">"100%p"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">translate</span>&gt;</span> 
-</code></pre><h5 id="右进左出">右进左出</h5><p>当点击返回时，通常是界面的切换左边出去，右边进来<br>move_right_in.xml </p>
-<pre><code><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="tag">&lt;<span class="title">translate</span>
-    <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="attribute">android:duration</span>=<span class="value">"300"</span>
-    <span class="attribute">android:fromXDelta</span>=<span class="value">"100%p"</span>
-    <span class="attribute">android:toXDelta</span>=<span class="value">"0%p"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">translate</span>&gt;</span>
-</code></pre><p>move_left_out.xml  </p>
-<pre><code><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="tag">&lt;<span class="title">translate</span>
-    <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="attribute">android:duration</span>=<span class="value">"300"</span>
-    <span class="attribute">android:fromXDelta</span>=<span class="value">"0%p"</span>
-    <span class="attribute">android:toXDelta</span>=<span class="value">"-100%p"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">translate</span>&gt;</span>
+        <h3 id="关于在android上面的联网判断">关于在android上面的联网判断</h3><a id="more"></a>  
+<h4 id="具体如下：">具体如下：</h4><ul>
+<li>注意联网的权限</li>
+<li>注意对手机网络的监听 </li>
+<li>对WiFi是否可用的判断</li>
+</ul>
+<h5 id="代码实现如下：">代码实现如下：</h5><pre><code> /**
+ * <span class="type">Created</span> by chen on <span class="number">15</span>-<span class="number">9</span>-<span class="number">5</span>.
+ */
+ public class <span class="type">ConnectionDetector</span> {
+
+  public <span class="keyword">static</span> boolean isConnectingToInternet(<span class="type">Context</span> context) {
+    <span class="type">ConnectivityManager</span> connectivityManager = (<span class="type">ConnectivityManager</span>) context.getSystemService(<span class="type">Context</span>.<span class="type">CONNECTIVITY_SERVICE</span>);
+
+    <span class="keyword">if</span> (connectivityManager == null) {
+    } <span class="keyword">else</span> {
+        <span class="type">NetworkInfo</span>[] info = connectivityManager.getAllNetworkInfo();
+        <span class="keyword">if</span> (info != null)
+            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; info.length; i++)
+                <span class="keyword">if</span> (info[i].getState() == <span class="type">NetworkInfo</span>.<span class="type">State</span>.<span class="type">CONNECTED</span>) {
+                    <span class="keyword">if</span> (ping()) {
+                        <span class="keyword">if</span> (info[i].getType() == <span class="type">ConnectivityManager</span>.<span class="type">TYPE_MOBILE</span>) {
+                            <span class="type">Log</span>.d(<span class="string">"TYPE"</span>,<span class="string">"手机"</span>);
+                        } <span class="keyword">else</span> {
+                            <span class="type">Log</span>.d(<span class="string">"TYPE"</span>,<span class="string">"wifi"</span>);
+                        }
+                        <span class="keyword">return</span> <span class="literal">true</span>;
+                    }
+                }
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}
+
+ //wifi连接上，但网络不可用的判断，ping外网
+
+ public <span class="keyword">static</span>  boolean ping() {
+
+    <span class="type">String</span> <span class="literal">result</span> = null;
+    <span class="keyword">try</span> {
+        <span class="type">String</span> ip = <span class="string">"www.baidu.com"</span>;
+        <span class="type">Process</span> p = <span class="type">Runtime</span>.getRuntime().exec(<span class="string">"ping -c 3 -w 100 "</span> + ip);
+        <span class="type">int</span> status = p.waitFor();
+        <span class="keyword">if</span> (status == <span class="number">0</span>) {
+            <span class="literal">result</span> = <span class="string">"success"</span>;
+            <span class="keyword">return</span> <span class="literal">true</span>;
+        } <span class="keyword">else</span> {
+            <span class="literal">result</span> = <span class="string">"failed"</span>;
+        }
+    } catch (<span class="type">IOException</span> e) {
+        <span class="literal">result</span> = <span class="string">"IOException"</span>;
+    } catch (<span class="type">InterruptedException</span> e) {
+        <span class="literal">result</span> = <span class="string">"InterruptedException"</span>;
+    } <span class="keyword">finally</span> {
+        <span class="type">Log</span>.d(<span class="string">"the result is "</span>,<span class="literal">result</span>);
+    }
+    <span class="keyword">return</span> <span class="literal">false</span>;
+}
+
+ public <span class="keyword">static</span> <span class="type">void</span> isNetwork(<span class="type">Context</span> context) {
+    boolean isOnline = isConnectingToInternet(context);
+    <span class="keyword">if</span> (!isOnline) {
+        <span class="type">Toast</span>.makeText(context, R.<span class="type">string</span>.is_online, <span class="type">Toast</span>.<span class="type">LENGTH_SHORT</span>).show();
+    }
+  }
+
+}
 </code></pre>
       
     </div>
@@ -272,18 +273,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/06/14/view/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          view
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/14/Square/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Square</div>
+    <a href="/2015/07/16/DesignSupportLibrary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DesignSupportLibrary</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -312,7 +304,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="useful_xml" data-title="useful_xml" data-url="http://yoursite.com/2015/06/14/useful_xml/"></div>
+	<div class="ds-thread" data-thread-key="netWork" data-title="netWork" data-url="http://yoursite.com/2015/09/10/netWork/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
