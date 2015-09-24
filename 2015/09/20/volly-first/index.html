@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>netWork | chenchen</title>
+  <title>volly-first | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于在android上面的联网判断">
+  <meta name="description" content="关于 Volley 的总结记录，心得，内容来自与codekk的开源项目源码分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="netWork">
-<meta property="og:url" content="http://yoursite.com/2015/09/10/netWork/index.html">
+<meta property="og:title" content="volly-first">
+<meta property="og:url" content="http://yoursite.com/2015/09/20/volly-first/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="关于在android上面的联网判断">
-<meta property="og:updated_time" content="2015-09-10T08:53:37.000Z">
+<meta property="og:description" content="关于 Volley 的总结记录，心得，内容来自与codekk的开源项目源码分析">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/design.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/Volley-run-flow-chart.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/volley-class.png">
+<meta property="og:updated_time" content="2015-09-24T06:50:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="netWork">
-<meta name="twitter:description" content="关于在android上面的联网判断">
+<meta name="twitter:title" content="volly-first">
+<meta name="twitter:description" content="关于 Volley 的总结记录，心得，内容来自与codekk的开源项目源码分析">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-netWork" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-volly-first" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/10/netWork/" class="article-date">
-  	<time datetime="2015-09-10T08:50:56.000Z" itemprop="datePublished">2015-09-10</time>
+      <a href="/2015/09/20/volly-first/" class="article-date">
+  	<time datetime="2015-09-20T06:45:08.000Z" itemprop="datePublished">2015-09-20</time>
 </a>
     </div>
   
@@ -178,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      netWork
+      volly-first
     </h1>
   
 
@@ -187,7 +190,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/netWork/">netWork</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android、Network、volley、first/">android、Network、volley、first</a></li></ul>
 	</div>
 
         
@@ -198,73 +201,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="关于在android上面的联网判断">关于在android上面的联网判断</h3><a id="more"></a>  
-<h4 id="具体如下：">具体如下：</h4><ul>
-<li>注意联网的权限</li>
-<li>注意对手机网络的监听 </li>
-<li>对WiFi是否可用的判断</li>
+        <h3 id="关于_Volley_的总结">关于 Volley 的总结</h3><p>记录，心得，内容来自与codekk的开源项目源码分析<br><a id="more"></a>  </p>
+<h4 id="volly_第一步">volly 第一步</h4><h6 id="volly的主要特点">volly的主要特点</h6><ul>
+<li>扩展性强，采用借口设置，可配置性强。</li>
+<li>提供简便的图片加载工具</li>
+<li>等</li>
 </ul>
-<h5 id="代码实现如下：">代码实现如下：</h5><pre><code> /**
- * <span class="type">Created</span> by chen on <span class="number">15</span>-<span class="number">9</span>-<span class="number">5</span>.
- */
- public class <span class="type">ConnectionDetector</span> {
-
-  public <span class="keyword">static</span> boolean isConnectingToInternet(<span class="type">Context</span> context) {
-    <span class="type">ConnectivityManager</span> connectivityManager = (<span class="type">ConnectivityManager</span>) context.getSystemService(<span class="type">Context</span>.<span class="type">CONNECTIVITY_SERVICE</span>);
-
-    <span class="keyword">if</span> (connectivityManager == null) {
-    } <span class="keyword">else</span> {
-        <span class="type">NetworkInfo</span>[] info = connectivityManager.getAllNetworkInfo();
-        <span class="keyword">if</span> (info != null)
-            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; info.length; i++)
-                <span class="keyword">if</span> (info[i].getState() == <span class="type">NetworkInfo</span>.<span class="type">State</span>.<span class="type">CONNECTED</span>) {
-                    <span class="keyword">if</span> (ping()) {
-                        <span class="keyword">if</span> (info[i].getType() == <span class="type">ConnectivityManager</span>.<span class="type">TYPE_MOBILE</span>) {
-                            <span class="type">Log</span>.d(<span class="string">"TYPE"</span>,<span class="string">"手机"</span>);
-                        } <span class="keyword">else</span> {
-                            <span class="type">Log</span>.d(<span class="string">"TYPE"</span>,<span class="string">"wifi"</span>);
-                        }
-                        <span class="keyword">return</span> <span class="literal">true</span>;
-                    }
-                }
-    }
-    <span class="keyword">return</span> <span class="literal">false</span>;
-}
-
- //wifi连接上，但网络不可用的判断，ping外网
-
- public <span class="keyword">static</span>  boolean ping() {
-
-    <span class="type">String</span> <span class="literal">result</span> = null;
-    <span class="keyword">try</span> {
-        <span class="type">String</span> ip = <span class="string">"www.baidu.com"</span>;
-        <span class="type">Process</span> p = <span class="type">Runtime</span>.getRuntime().exec(<span class="string">"ping -c 3 -w 100 "</span> + ip);
-        <span class="type">int</span> status = p.waitFor();
-        <span class="keyword">if</span> (status == <span class="number">0</span>) {
-            <span class="literal">result</span> = <span class="string">"success"</span>;
-            <span class="keyword">return</span> <span class="literal">true</span>;
-        } <span class="keyword">else</span> {
-            <span class="literal">result</span> = <span class="string">"failed"</span>;
-        }
-    } catch (<span class="type">IOException</span> e) {
-        <span class="literal">result</span> = <span class="string">"IOException"</span>;
-    } catch (<span class="type">InterruptedException</span> e) {
-        <span class="literal">result</span> = <span class="string">"InterruptedException"</span>;
-    } <span class="keyword">finally</span> {
-        <span class="type">Log</span>.d(<span class="string">"the result is "</span>,<span class="literal">result</span>);
-    }
-    <span class="keyword">return</span> <span class="literal">false</span>;
-}
-
- public <span class="keyword">static</span> <span class="type">void</span> isNetwork(<span class="type">Context</span> context) {
-    boolean isOnline = isConnectingToInternet(context);
-    <span class="keyword">if</span> (!isOnline) {
-        <span class="type">Toast</span>.makeText(context, R.<span class="type">string</span>.is_online, <span class="type">Toast</span>.<span class="type">LENGTH_SHORT</span>).show();
-    }
-  }
-
-}
-</code></pre>
+<h5 id="总体设计">总体设计</h5><ul>
+<li><p>总体设计图</p>
+<p><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/design.png" alt="">  </p>
+<p>主要是通过两种Dispatch Thread 不断从RequestQueue 取出请求，根据是否缓存调用<br>cache或Network这两类数据获取接口之一，得到的数据，由ResponseDelivery去做结果<br>分发和回调处理。  </p>
+</li>
+<li><p>volley概要</p>
+<p>通过newRequestQueue(…)函数新建并启动一个请求队列RequestQueue,只需要在<br>RequestQueue不断的add Request 就可以。  </p>
+</li>
+</ul>
+<p>volly对外暴露的API，通过newRequestQueue(…)<br>Request: 表示是一个请求类，StringRequest、JsonRequest、ImageRequest 是它的子类，<br>表示某种类型的请求。  </p>
+<p>RequestQueue: 表示请求队列，里面包含一个CacheDispatcher(用于处理走缓存请求的调度)<br>、NetworkDispatcher数组（处理走网络请求的线程），一个ResponseDelivery(返回结果分发接口)，<br>通过start()函数启动CacheDispatcher和NetworkDispatchers.  </p>
+<p>CacheDispatcher: 一个线程，用于调度处理缓存的请求，启动后会不断的从缓存队列里取请求处理，<br>队列为空则等待，将结果传递给ResponseDelivery 去执行后续处理。若结果未缓存过、缓存失效或是<br>需要刷新的情况下，该请求需要去NetworkDispatcher去调度处理。  </p>
+<p>NetworkDispatcher: 线程，用于调度处理走网络的请求。将结果传递给ResponseDelivery去执行<br>后续处理，并判断结果是否要进行缓存。  </p>
+<p>ResponseDelivery: 返回结果分发接口。目前只有基于ExecutorDelivery的在入参handler对应线程进行分发。<br>HttpStack: 处理http请求，返回请求结果。volly里面有基于HttpURLConnection的HurlStack和基于<br>Apache HttpClient的HttpClientStack.  </p>
+<p>Network: 调用HttpStack处理请求，并将结果转换为可被ResponseDelivery处理的NetworkResponse.  </p>
+<p>Cache: 缓存请求结果，volley默认使用的是基于sdcard的DiskBaseCache, NetworkDispatcher得到<br>请求结果后判断是否需要存储在cache，CacheDispatcher会从Cache中取缓存结果。</p>
+<h4 id="流程图">流程图</h4><h5 id="volley请求流程图">volley请求流程图</h5><p><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/Volley-run-flow-chart.png" alt="">  </p>
+<h4 id="4-_详细设计">4. 详细设计</h4><h5 id="4-1_类关系图">4.1 类关系图</h5><p> <img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/volley-class.png" alt=""><br> 这是volley框架的主要类关系图<br>   图内红色圈内的部分，组成了volley框架的核心，围绕着RequestQueue类，将各个功能点以组合的方式<br>   结合在一起。各个功能点也是以接口或者抽象类的形式提供。<br>   红色圈外的部分，在volley源码中放在了toolbox 包中，作为volley为各个功能点提供默认的具体实现。<br>   通过类图，volley有着非常好的拓展性，通过各个功能点的接口，可以自定义更符合实际需要的实现  </p>
+<p>   多用组合，少用继承；针对接口编程，不针对具体实现编程。<br>   一个优秀框架的设计！</p>
+<h5 id="4-2_核心功能介绍">4.2 核心功能介绍</h5><h6 id="4-2-1_Volley-java">4.2.1 Volley.java</h6>
       
     </div>
     
@@ -273,18 +235,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/20/volly-first/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          volly-first
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/16/DesignSupportLibrary/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DesignSupportLibrary</div>
+    <a href="/2015/09/10/netWork/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">netWork</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -313,7 +266,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="netWork" data-title="netWork" data-url="http://yoursite.com/2015/09/10/netWork/"></div>
+	<div class="ds-thread" data-thread-key="volly-first" data-title="volly-first" data-url="http://yoursite.com/2015/09/20/volly-first/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
