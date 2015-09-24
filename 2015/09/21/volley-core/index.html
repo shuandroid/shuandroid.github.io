@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>volley-core | chenchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Volley第二部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="volley-core">
+<meta property="og:url" content="http://yoursite.com/2015/09/21/volley-core/index.html">
+<meta property="og:site_name" content="chenchen">
+<meta property="og:description" content="Volley第二部分">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/RequestQueue-add-flow-chart.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/CacheDispatcher-run-flow-chart.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/NetworkDispatcher-run-flow-chart.png">
+<meta property="og:updated_time" content="2015-09-24T07:00:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="volley-core">
+<meta name="twitter:description" content="Volley第二部分">
+  
+    <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://news.mydrivers.com/Img/20100622/10062490.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chenchen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">be all you can be.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Library/" style="font-size: 10px;">Library</a> <a href="/tags/Network/" style="font-size: 16.67px;">Network</a> <a href="/tags/RecyclerView/" style="font-size: 10px;">RecyclerView</a> <a href="/tags/Suooprt/" style="font-size: 10px;">Suooprt</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android，-Network，-volley，-first/" style="font-size: 10px;">android， Network， volley， first</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 13.33px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/fourth/" style="font-size: 10px;">fourth</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/netWork/" style="font-size: 10px;">netWork</a> <a href="/tags/second/" style="font-size: 10px;">second</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/third/" style="font-size: 10px;">third</a> <a href="/tags/view/" style="font-size: 16.67px;">view</a> <a href="/tags/volley/" style="font-size: 16.67px;">volley</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">做好眼前的事</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chenchen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://news.mydrivers.com/Img/20100622/10062490.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chenchen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">be all you can be.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-volley-core" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/21/volley-core/" class="article-date">
+  	<time datetime="2015-09-21T06:53:02.000Z" itemprop="datePublished">2015-09-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      volley-core
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Network/">Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/second/">second</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volley/">volley</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Volley第二部分">Volley第二部分</h3><a id="more"></a>  
+<h3 id="Volley_第二部分">Volley 第二部分</h3><h4 id="4-2_核心类功能介绍">4.2 核心类功能介绍</h4><h5 id="4-2-1_Volley-java">4.2.1 Volley.java</h5><p>和volley框架同名的类，其实是个工具类，作用是构建一个可用于添加网络请求的RequestQueue对象  </p>
+<h6 id="1-_主要函数">1. 主要函数</h6><p>Volley.java有两个重载的静态方法：  </p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RequestQueue <span class="title">newRequestQueue</span><span class="params">(Context context)</span></span>; 
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RequestQueue <span class="title">newRequestQueue</span><span class="params">(Context context, HttpStack <span class="built_in">stack</span>)</span></span>;
+</code></pre><p>第一个方法的实现调用了第二个方法，传的HeepStack的参数为null。<br>第二个方法中，如果HttpStack的参数为null,则如果系统在Gingerbread及之后（即API Level&gt;=9）,<br>采用基于HttpURLConnection的HurlStack,如果小于9，采用基于HttpClient的HttpClientStack.  </p>
+<pre><code><span class="keyword">if</span> (<span class="built_in">stack</span> <span class="subst">==</span> <span class="built_in">null</span>) {
+   <span class="keyword">if</span> (Build<span class="built_in">.</span>VERSION<span class="built_in">.</span>SDK_INT <span class="subst">&gt;=</span> <span class="number">9</span>) {
+       <span class="built_in">stack</span> <span class="subst">=</span> <span class="literal">new</span> HurlStack();
+   } <span class="keyword">else</span> {
+       <span class="built_in">stack</span> <span class="subst">=</span> <span class="literal">new</span> HttpClientStack(AndroidHttpClient<span class="built_in">.</span>newInstance(userAgent));
+   }
+}
+</code></pre><p>得到了HttpStack，然后通过它构造一个代表网络(Network)的具体实现BasicNetwork.<br>接着构造一个代表缓存(Cache)的基于Disk的具体实现DiskBasedCache.<br>最后将网络(Network)对象和缓存(Cache)对象传入构建一个RequestQueue,启动这个RequestQueue,并返回。  </p>
+<pre><code>Network network = <span class="keyword">new</span> BasicNetwork(<span class="built_in">stack</span>);
+RequestQueue <span class="built_in">queue</span> = <span class="keyword">new</span> RequestQueue(<span class="keyword">new</span> DiskBasedCahce(cacheDir),network);
+<span class="built_in">queue</span>.start();
+<span class="keyword">return</span> <span class="built_in">queue</span>;
+</code></pre><p>  大多采用volley.newRequestQueue(context)的默认实现，构建RequestQueue.<br>  通过上面可以看到，可以抛开Volley工具类构造自定义的RequestQueue,采用自定义HttpStack,<br>  采用自定义的Network实现，采用自定义的Cache实现来构建RequestQueue.  </p>
+<h6 id="2-_HttpURLConnection和AndroidHttpClient_如何选择及原因：">2. HttpURLConnection和AndroidHttpClient 如何选择及原因：</h6><p>在Froyo(2.2)之前，HttpURLConnection有个大bug，调用close()会影响连接池，导致连接复用失败，<br>所以在Froyo之前，使用HttpURLConnection需要关闭keepAlive.<br>另外在 Gingerbread(2.3) HttpURLConnection 默认开启了 gzip 压缩，提高了 HTTPS 的性能,<br>Ice Cream Sandwich(4.0) HttpURLConnection 支持了请求结果缓存。<br>再加上 HttpURLConnection 本身 API 相对简单，所以对 Android 来说，在 2.3 之后建议使用<br>HttpURLConnection，之前建议使用 AndroidHttpClient。  </p>
+<h6 id="3-_关于User_Agent">3. 关于User Agent</h6><p>通过代码，发现如果使用AndroidHttpClient,Volley还会将请求中的UserAgent字段设置为App的<br>${packageName}/${versionCode}，如果异常则使用 “volley/0”，不过这个获取UserAgent的操作<br>应该放到if else 内部更合适，而对于HttpURLConnection却没有任何操作，为什么？如果使用Fiddler<br>或Charles对数据抓包，会发现，HttpURLConnection默认是对UserAgent，类似：  </p>
+<pre><code>Dalvik/<span class="number">1.6</span>.<span class="number">0</span> <span class="params">(Linux; U; Android <span class="number">4.1</span>.<span class="number">1</span>; Google Nexus <span class="number">4</span> - <span class="number">4.1</span>.<span class="number">1</span> - A<span class="literal">PI</span> <span class="number">16</span> - <span class="number">768</span>x1280_1              Build/JRO03S)</span>
+</code></pre><p>经常用 WebView 的同学会也许会发现似曾相识，是，WebView 默认的 User-Agent 也是这个。<br>实际在请求发出之前，会检测 User-Agent 是否为空，如果不为空，则加上系统默认UserAgent.<br>在Android2.1之后，可以通过：  </p>
+<pre><code><span class="keyword">String </span>userAgent = System.getProperty(<span class="string">"http.agent"</span>)<span class="comment">;</span>
+</code></pre><p>得到系统默认的User-Agent,Volley如果希望自定义User-Agent,可在自定义Request中重写getHeaders()函数  </p>
+<pre><code><span class="annotation">@Override</span>
+public <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt; getHeaders() throws AuthFailureError {
+   <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt; headerMap = <span class="keyword">new</span> HashMao&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt;();
+   headerMap.put(<span class="string">"User-Agent"</span>, <span class="string">"android-open-project-analysis/1.0"</span>);
+   <span class="keyword">return</span> headerMap;
+}
+</code></pre><h6 id="#_4-2-2_Request-java"># 4.2.2 Request.java</h6><p>代表一个网络请求的抽象类，通过构建一个Reqest类的非抽象子类(StringRequest,JsonRequest,<br>ImageRequest或自定义)对象，并将其加入到RequestQueue中来完成一次网络请求操作，<br>Volley支持8种Http请求方式，GET,POST,PUT,DELETE,HEAD,OPTIONS,TRACE,PATCH<br>Request类中包含了请求url，请求方式，请求Header,请求Body,请求的优先级等信息。  </p>
+<p>因为是抽象类，子类必须重写的两个方法。  </p>
+<pre><code><span class="function"><span class="keyword">abstract</span> <span class="keyword">protected</span> Response&lt;T&gt; <span class="title">parseNetworkResponse</span>(<span class="params">NetworkResponse response</span>)</span>;
+</code></pre><p>子类重写此方法，将网络返回的原生字节内容转换为合适的类型，此方法会在工作线程中被调用。  </p>
+<pre><code><span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">deliverResponse</span><span class="params">(T response)</span></span>;
+</code></pre><p>子类重写此方法，将解析成合适类型的内容传递给它们的监听回调。  </p>
+<p>一下两个方法也经常被重写  </p>
+<pre><code>public byte[] <span class="function"><span class="title">getBody</span><span class="params">()</span></span>
+</code></pre><p>重写此方法，可以构建用于POST,PUT,PATCH, 请求方式的body内容。  </p>
+<pre><code><span class="label">projected</span> <span class="preprocessor">Map</span>&lt;<span class="keyword">String, </span><span class="keyword">String&gt; </span>getParams()
+</code></pre><p>在上面getBody()函数没有被重写情况下，此方法的返回值会被key、value分别编码后拼装起来<br>转换为字节码作为Body的内容。  </p>
+<h6 id="RequestQueue-java">RequestQueue.java</h6><p>volley 框架的核心类，将请求request加入到一个运行的RequestQueue中，来完成请求操作。  </p>
+<ol>
+<li><p>主要成员变量<br>RequestQueue 中维持了两个基于优先级的Request队列，缓存请求队列和网络请求队列。<br>在缓存请求队列中的Request，将通过缓存获取数据；放在网络请求队列的Request,将通过网络获取数据  </p>
+<p>  private final PriorityBlockingQueue<request<?>&gt; mCacheQueue = new PriorityBlockingQueue&lt;<br>  Request&lt;?&gt;&gt;();<br>  private final PriorityBlockingQueue<request<?>&gt; mNetworkQueue = new PriorityBlockingQueue<br>  <request<?>&gt;();</request<?></request<?></request<?></p>
+</li>
+</ol>
+<p>维护了一个正在进行中，尚未完成的请求集合。  </p>
+<pre><code>private final Set<span class="tag">&lt;<span class="title">Request</span><span class="php"><span class="preprocessor">&lt;?</span>&gt;&gt; mCurrentRequests = <span class="keyword">new</span> HashSet&lt;Request<span class="preprocessor">&lt;?</span>&gt;</span>&gt;</span>();
+</code></pre><p>维护了一个等待请求的集合，如果一个请求正在被处理并且可以被缓存，后续有相同的url的时候,<br>将进入此队列：  </p>
+<pre><code><span class="keyword">private</span> final <span class="built_in">Map</span><span class="subst">&lt;</span><span class="built_in">String</span>,<span class="built_in">Queue</span><span class="subst">&lt;</span>Request<span class="subst">&lt;?&gt;&gt;&gt;</span> mWaitingRequests <span class="subst">=</span> <span class="literal">new</span> HashMap<span class="subst">&lt;</span><span class="built_in">String</span>,
+<span class="built_in">Queue</span><span class="subst">&lt;</span>Request<span class="subst">&lt;?&gt;&gt;&gt;</span>();
+</code></pre><ol>
+<li>启动队列  </li>
+</ol>
+<p>创建出一个RequestQueue以后，调用start方法，启动队列。  </p>
+<pre><code><span class="comment">/**
+ * Starts the dispathers in this queue.
+ */</span>
+public void start<span class="params">()</span> {
+   stop<span class="params">()</span>;
+   mCacheDispatcher = new CacheDispatcher<span class="params">(mCacheQueue,mNetworkQueue,mCache,mDelivery)</span>;
+   mCacheDispatcher.start<span class="params">()</span>;
+
+   <span class="comment">//Create network dispatchers (and corresponding threads) up to the pool size.</span>
+   <span class="keyword">for</span><span class="params">(int i = <span class="number">0</span>; i &lt; mDispatchers.length; i++)</span> {
+
+       NetworkDispatcher networkDispatcher = new NetworkDispatcher<span class="params">(mNetworkQueue,
+       mNetwork, mCache, mDelivery)</span>;
+       mDispatchers[i] = networkDispatcher;
+       networkDispatcher.start<span class="params">()</span>;
+   }    
+}
+</code></pre><p>start()方法中，开启了缓存调度线程CacheDispatcher和n个网路调度线程NetworkDispatcher,<br>默认线程数为4，即n默认为4，存在优化的余地，比如可以根据CPU核数以及网络类型计算更合适的并发数<br>缓存调度线程不断的从缓存请求队列中取出request去处理，网络调度线程不断的从网络请求<br>队列中取出Request去处理  </p>
+<ol>
+<li><p>加入请求  </p>
+<p>  public <t> Request<t> add(Request<t> request);</t></t></t></p>
+</li>
+</ol>
+<p>流程图如下：<br> <img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/RequestQueue-add-flow-chart.png" alt="">  </p>
+<ol>
+<li><p>请求完成  </p>
+<p>  void finish(Request&lt;?&gt; request)</p>
+</li>
+</ol>
+<p>Request 请求结束  </p>
+<ul>
+<li>首先在正在进行中请求集合mCurrentRequests中移除该请求。</li>
+<li>然后查找请求等待集合 mWaitingRequests中是否存在等待的请求，如果存在则将等待队列移除<br>并将等待队列所有的请求添加到缓存请求队列中，让缓存请求处理线程CacheDispoatcher自动处理。</li>
+</ul>
+<ol>
+<li><p>请求取消  </p>
+<pre><code><span class="keyword">public</span> <span class="keyword">void</span> canceAll(RequestFilter <span class="built_in">filter</span>) 
+<span class="keyword">public</span> <span class="keyword">void</span> cancelAll(<span class="keyword">final</span> <span class="keyword">Object</span> tag) 
+</code></pre></li>
+</ol>
+<p>取消当前请求集合所有符合条件的请求。<br>filter参数表示可以按照自定义的过滤器过滤需要取消的请求。<br>tag表示按照Request.setTag 设置好的tag取消请求，比如属于某个activity的。  </p>
+<h6 id="4-2-4_CacheDispatcher-java">4.2.4 CacheDispatcher.java</h6><p>一个线程用于调度处理走缓存的请求，启动后会不断从缓存请求队列中取请求处理，<br>队列为空则等待，请求处理结束则将结果传递给ResponseDelivery去执行后续处理。<br>当结果未缓存过、缓存失效或缓存需要刷新的情况下，该请求都需要重新进入NetworkDispatcher<br>去调度处理。  </p>
+<ol>
+<li>成员变量<br>BlockingQueueRequest&lt;?&gt;&gt; mCacheQueue 缓存请求队列<br>BlockingQueue<request<?>&gt; mNetworkQueue 网络请求队列<br>Cache mCache 缓存类， 代表一个可以获取请求结果，存储请求结果的缓存<br>ResponseDelivery mDelivery 请求结果传递类。  </request<?></li>
+<li>处理流程图<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/CacheDispatcher-run-flow-chart.png" alt="">  </li>
+</ol>
+<h6 id="NetworkDispatcher-java">NetworkDispatcher.java</h6><p>一个线程，用来调度处理走网络的请求。启动后会不断的从网络请求队列中取得请求处理，<br>队列为空则等待，请求处理结束后则将结果传递给ResponseDelivery去执行后续结果，<br>并判断结果是否需要缓存。  </p>
+<p>1.成员变量  </p>
+<p>BlockingQueue<request<?>&gt; mQueue 网络请求队列<br>Network mNetwork 网络类，代表了一个可以执行请求的网络<br>Cache mCache 缓存类，代表了一个可以获取请求结果，存储请求结果的缓存<br>ResponseDelivery mDelivery 请求结果传递类，可以传递请求的结果或者错误的调用者  </request<?></p>
+<p>2.处理流程图  </p>
+<p> <img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/network/volley/image/NetworkDispatcher-run-flow-chart.png" alt="">  </p>
+<h6 id="4-2-6_Cache-java">4.2.6 Cache.java</h6><p>缓存接口，代表了一个可以获取请求结果，存储请求结果的缓存。  </p>
+<p>1.主要方法  </p>
+<pre><code><span class="keyword">public</span> Entry <span class="built_in">get</span>(<span class="keyword">String</span> <span class="variable">key</span>); 通过<span class="variable">key</span>获取请求的缓存实体
+<span class="keyword">public</span> <span class="keyword">void</span> put(<span class="keyword">String</span> <span class="variable">key</span>, Entry entry); 存入一个请求的缓存实体  
+<span class="keyword">public</span> <span class="keyword">void</span> remove(<span class="keyword">String</span> <span class="variable">key</span>, Entry entry); 移除指定的缓存实体 
+<span class="keyword">public</span> <span class="keyword">void</span> <span class="built_in">clear</span>(); 情况缓存 
+</code></pre><p>2.代表缓存实体的内部类Entry  </p>
+<p>成员变量和方法  </p>
+<pre><code><span class="keyword">byte[] </span><span class="preprocessor">data</span> 请求返回的数据 （<span class="keyword">body实体）
+</span><span class="keyword">String </span>etag Http相应首部中用于缓存新鲜度验证的ETag  
+<span class="label">long</span> serverDate Http 响应首部中的响应产生时间  
+<span class="label">long</span> <span class="preprocessor">ttl</span> 缓存的过期时间
+<span class="label">long</span> softTtl 缓存的新鲜时间
+<span class="label">Map</span>&lt;<span class="keyword">String, </span><span class="keyword">String&gt; </span>responseHeaders 响应的headers
+<span class="keyword">boolean </span>isExpired()判断缓存是否过期，过期缓存不能继续使用
+<span class="keyword">boolean </span>refreshNeeded() 判断缓存是否新鲜，不新鲜的缓存需要发送到服务器做新鲜度的检测  
+</code></pre><h6 id="4-2-7_DiskBasedCache-java">4.2.7 DiskBasedCache.java</h6><p>继承与Cache类，基于Disk的缓存实现类  </p>
+<p>1.主要方法  </p>
+<pre><code><span class="comment">//初始化，扫描缓存目录得到所有缓存数据摘要信息放入内存</span>
+<span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> initialize() 
+<span class="comment">//从缓存中得到数据，先从摘要信息中得到摘要信息，然后读取缓存数据文件得到内容</span>
+<span class="keyword">public</span> <span class="keyword">synchronized</span> Entry <span class="built_in">get</span>(<span class="keyword">String</span> <span class="variable">key</span>)  
+<span class="comment">//将数据存入缓存内。先检查缓存是否会满，会则先删除缓存中部分数据，然后再新建缓存文件</span>
+<span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> put(<span class="keyword">String</span> <span class="variable">key</span>, Entry entry)
+<span class="comment">// 检查是否能再分配 neededSpace 字节的空间，如果不能则删除缓存中部分数据</span>
+<span class="keyword">private</span> <span class="keyword">void</span> pruneIfNeeded(<span class="built_in">int</span> neededSpace)
+<span class="comment">//清空缓存</span>
+<span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="built_in">clear</span>() 
+<span class="comment">//删除缓存中的某个元素</span>
+<span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> remove(<span class="keyword">String</span> <span class="variable">key</span>) 
+</code></pre><p>2.CacheHeadler类  </p>
+<p>CacheHeadler是缓存文件摘要信息，存贮在缓存文件的头部，与上面的Cache.Entry相似  </p>
+<h6 id="见core2-md">见core2.md</h6>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/23/volley-core2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          volley-core2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/20/volly-first/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">volly-first</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="volley-core" data-title="volley-core" data-url="http://yoursite.com/2015/09/21/volley-core/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 chenchen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

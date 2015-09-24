@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: database | chenchen</title>
+  <title>volley-core3 | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="somthing can&apos;t tell.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chenchen">
-<meta property="og:url" content="http://yoursite.com/tags/database/index.html">
+  <meta name="description" content="Volley第四部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="volley-core3">
+<meta property="og:url" content="http://yoursite.com/2015/09/24/volley-core3/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="somthing can&apos;t tell.">
+<meta property="og:description" content="Volley第四部分">
+<meta property="og:updated_time" content="2015-09-24T07:05:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chenchen">
-<meta name="twitter:description" content="somthing can&apos;t tell.">
+<meta name="twitter:title" content="volley-core3">
+<meta name="twitter:description" content="Volley第四部分">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -160,51 +161,121 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-volley-core3" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/14/Square/" class="archive-article-date">
-  	<time datetime="2015-06-14T06:28:56.000Z" itemprop="datePublished">6月 14</time>
+    <div class="article-meta">
+      <a href="/2015/09/24/volley-core3/" class="article-date">
+  	<time datetime="2015-09-24T06:53:30.000Z" itemprop="datePublished">2015-09-24</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/14/Square/">Square</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      volley-core3
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/square/">square</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Network/">Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fourth/">fourth</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volley/">volley</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Volley第四部分">Volley第四部分</h3><a id="more"></a>  
+<h5 id="4-2-30_ClearCacheRequest-java">4.2.30 ClearCacheRequest.java</h5><p>用于人为清空Http缓存的请求。<br>添加到RequestQueue后能很快执行，因为优先级比较高，为Priority.IMMEDIATE.<br>并且清空缓存的方法mCache.clear() 写在了isCancled()方法体中，<br>能最早的得到执行。  </p>
+<p>ClearCacheRequest的写法不敢苟同，目前看来唯一的好处就是可以将清空缓存操作也当做一个请求。<br>而在isCanceled()中做清空操作本身就造成了歧义，不看源码没人知道在NetworkDispatcher run方法<br>循环的过程中，isCanceled() 这个读操作竟然做了可能造成缓存被清空。只能跟源码的解释一样<br>当作一个Hack操作。  </p>
+<h5 id="4-2-31_Authenticator-java">4.2.31 Authenticator.java</h5><p>身份认证接口，用于基本认证或者摘要认证，这个类是Volley用于和身份验证打通的接口，<br>比如OAuth, 不过目前的使用不是特别广泛和volley的内部结合也不是特别紧密。  </p>
+<h5 id="4-2-32_AndroidAuthenticator-java">4.2.32 AndroidAuthenticator.java</h5><p>继承Authenticator, 基于Android AccountManager的认证交互实现类。  </p>
+<h5 id="4-2-33_VolleyLog-java">4.2.33 VolleyLog.java</h5><p>Volley 的log工具类。  </p>
+<h5 id="4-2-34_VolleyError-java">4.2.34 VolleyError.java</h5><p>volley 中所以错误异常的父类，继承自Expection，可通过此类设置和获取NetworkResponse<br>或者请求的耗时。  </p>
+<h5 id="4-2-35_AuthFailureError-java">4.2.35 AuthFailureError.java</h5><p>继承与VolleyError,代表请求认证失败错误，如ResponseCode的401,403.  </p>
+<h5 id="4-2-36_NetworkError-java">4.2.36 NetworkError.java</h5><p>继承自 VolleyError，代表网络错误  </p>
+<h5 id="4-2-37_ParseError-java">4.2.37 ParseError.java</h5><p>继承自 VolleyError，代表内容解析错误  </p>
+<h5 id="4-2-38_ServerError-java">4.2.38 ServerError.java</h5><p>继承自 VolleyError，代表服务端错误  </p>
+<h5 id="4-2-39_TimeoutError-java">4.2.39 TimeoutError.java</h5><p>继承自 VolleyError，代表请求超时错误。  </p>
+<h5 id="4-2-40_NoConnectionError-java">4.2.40 NoConnectionError.java</h5><p>继承自 NetworkError，代表无法建立连接错误  </p>
+<h4 id="一些值得思考的地方">一些值得思考的地方</h4><h5 id="5-1_关于Http缓存">5.1 关于Http缓存</h5><p>Volley 构建了一套相对完整的符合Http语义的缓存机制。  </p>
+<h6 id="优点和特点：">优点和特点：</h6><ol>
+<li>根据Cache-Control和Expires首部来计算缓存的过期时间，<br>如果两个首部都存在情况下，以Cache-Control为准。</li>
+<li>利用If-None-Match和If-Modified-Since对过期缓存或者不新鲜缓存，<br>进行请求再验证，并处理 304 响应，更新缓存。  </li>
+<li>默认的缓存实现，将缓存以文件的形式存储在 Disk，程序退出后不会丢失  </li>
+</ol>
+<h5 id="注意些：">注意些：</h5><h4 id="THE_END">THE END</h4>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/23/volley-core2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">volley-core2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="volley-core3" data-title="volley-core3" data-url="http://yoursite.com/2015/09/24/volley-core3/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
