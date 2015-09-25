@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>apologize | chenchen</title>
+  <title>base-adapter-helper | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="somthing can&apos;t tell.">
+  <meta name="description" content="关于一个简单库 BaseAdapterHelper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apologize">
-<meta property="og:url" content="http://yoursite.com/2015/06/14/apologize/index.html">
+<meta property="og:title" content="base-adapter-helper">
+<meta property="og:url" content="http://yoursite.com/2015/09/25/base-adapter-helper/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="somthing can&apos;t tell.">
-<meta property="og:updated_time" content="2015-06-14T12:27:09.000Z">
+<meta property="og:description" content="关于一个简单库 BaseAdapterHelper">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/base-adapter-helpr.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/view_holder_pattern.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/base-adapter-helper-ClassDiagram.jpg">
+<meta property="og:updated_time" content="2015-09-25T13:45:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apologize">
-<meta name="twitter:description" content="somthing can&apos;t tell.">
+<meta name="twitter:title" content="base-adapter-helper">
+<meta name="twitter:description" content="关于一个简单库 BaseAdapterHelper">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-apologize" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-base-adapter-helper" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/14/apologize/" class="article-date">
-  	<time datetime="2015-06-14T12:27:09.000Z" itemprop="datePublished">2015-06-14</time>
+      <a href="/2015/09/25/base-adapter-helper/" class="article-date">
+  	<time datetime="2015-09-25T13:42:33.000Z" itemprop="datePublished">2015-09-25</time>
 </a>
     </div>
   
@@ -178,7 +181,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      apologize
+      base-adapter-helper
     </h1>
   
 
@@ -186,6 +189,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adapter/">adapter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/list/">list</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recycler/">recycler</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -194,7 +201,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="关于一个简单库_BaseAdapterHelper">关于一个简单库 BaseAdapterHelper</h3><a id="more"></a>  
+<h4 id="baseAdapterHelper">baseAdapterHelper</h4><h5 id="1-_功能介绍">1. 功能介绍</h5><p>1.1 baseAdapterHelper<br>是对传统 BaseAdapter ViewHolder模式的一个封装。<br>1.2 基本使用<br>     mListView.setAdapter(mAdapter = new QuickAdapter<bean>(MainActivity.this,<br>     R.layout.item_list, mDatas) {<br>            @Override<br>            protected void convert(BaseAdapterHelper helper, Bean item) {<br>                helper.setText(R.id.tv_title, item.getTitle());<br>                helper.setImageUrl(R.id.id_icon, item.getUrl());<br>                helper.setText(R.id.tv_describe, item.getDesc());<br>                helper.setText(R.id.tv_phone, item.getPhone());<br>                helper.setText(R.id.tv_time, item.getTime());<br>            }       </bean></p>
+<pre><code>})<span class="comment">;</span>
+</code></pre><p>1.3 优点  </p>
+<ul>
+<li>提供QuickAdapter, 省去类似getCount()等抽象函数书写，只需要关注从model到view的显示。  </li>
+<li>BaseAdapterHelper中封装了很多为view操作的辅助方法，例如获取网络加载图片：<br>helper.setImageUrl(R.id.iv_photo, item.getPhotoUrl());<br>1.4 缺点  </li>
+<li>总体来说这个库比较简单，实现也有待改进。</li>
+</ul>
+<h5 id="2-_总体设计">2. 总体设计</h5><p>由于base-adapter-helper 本质上仍然是ViewHolder模式，比较其设计图：  </p>
+<p>base-adapter-helper<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/base-adapter-helpr.png" alt="">  </p>
+<p>ViewHolder Pattern<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/view_holder_pattern.png" alt="">  </p>
+<p>看到base-adapter-helper对传统的baseAdapter进行了初步的实现(QuickAdapter),并且其子类需要实现<br>convert()这一个方法，在这个方法中可以拿到BaseAdapterHelper,BaseAdapterHelper就相当于是<br>viewHolder，但它的内部有大量的辅助方法，用来设置view的数据和处理事件。  </p>
+<h5 id="3-_详细设计">3. 详细设计</h5><p>设计类图：<br><img src="https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/other/base-adapter-helper/image/base-adapter-helper-ClassDiagram.jpg" alt="">  </p>
+<ul>
+<li>在baseQuickAdapter中实现了BaseAdapter中的通用的抽象方法；  </li>
+<li>baseQuickAdapter中的两个泛型，T表示数据实体类Bean类型，H表示BaseAdapterHelper或其子类；  </li>
+<li>QuickAdapter继承自BaseQuickAdapter,并且传入BaseAdapterHelper作为H泛型；</li>
+<li>EnhancedQuickAdapter 主要为convert()添加一个itemChanged参数，表示item对应数据是否发生变化；  </li>
+<li>BaseAdapter为了获取view并进行内容、事件等相关操作的辅助类。</li>
+<li>可自行继承BaseAdapterHelper来扩展，作为BaseQuickAdapter子类的H泛型。</li>
+</ul>
+<h5 id="核心类源码分析">核心类源码分析</h5>
       
     </div>
     
@@ -203,18 +232,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/06/14/FrameAnimation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          FrameAnimation
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/14/view/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">view</div>
+    <a href="/2015/09/24/volley-core3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">volley-core3</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -243,7 +263,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="apologize" data-title="apologize" data-url="http://yoursite.com/2015/06/14/apologize/"></div>
+	<div class="ds-thread" data-thread-key="base-adapter-helper" data-title="base-adapter-helper" data-url="http://yoursite.com/2015/09/25/base-adapter-helper/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
