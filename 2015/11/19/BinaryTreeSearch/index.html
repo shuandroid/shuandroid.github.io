@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>strStr.md | chenchen</title>
+  <title>BinaryTreeSearch.md | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="九章第一节 strStr算法学习小心得。">
+  <meta name="description" content="Binary  Search Tree二分查找">
 <meta property="og:type" content="article">
-<meta property="og:title" content="strStr.md">
-<meta property="og:url" content="http://yoursite.com/2015/11/12/strStr-md/index.html">
+<meta property="og:title" content="BinaryTreeSearch.md">
+<meta property="og:url" content="http://yoursite.com/2015/11/19/BinaryTreeSearch/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="九章第一节 strStr算法学习小心得。">
-<meta property="og:updated_time" content="2015-11-19T17:23:51.000Z">
+<meta property="og:description" content="Binary  Search Tree二分查找">
+<meta property="og:updated_time" content="2015-11-19T17:24:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strStr.md">
-<meta name="twitter:description" content="九章第一节 strStr算法学习小心得。">
+<meta name="twitter:title" content="BinaryTreeSearch.md">
+<meta name="twitter:description" content="Binary  Search Tree二分查找">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +161,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-strStr-md" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-BinaryTreeSearch" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/12/strStr-md/" class="article-date">
-  	<time datetime="2015-11-11T17:16:38.000Z" itemprop="datePublished">2015-11-12</time>
+      <a href="/2015/11/19/BinaryTreeSearch/" class="article-date">
+  	<time datetime="2015-11-18T17:22:17.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     </div>
   
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      strStr.md
+      BinaryTreeSearch.md
     </h1>
   
 
@@ -198,87 +198,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="九章第一节_strStr">九章第一节 strStr</h3><p>算法学习小心得。<br><a id="more"></a>  </p>
-<p><em>其中包含的有一些，KMP算法，string.charAt()函数</em></p>
-<ul>
-<li>coding style<br>变量名， 空格， 换行，<br>Google style 在看一遍<br>Java程序花括号在最右边（同一行右侧）  </li>
+        <h3 id="Binary_Search_Tree">Binary  Search Tree</h3><p><em>二分查找</em><br><a id="more"></a></p>
+<h4 id="Time_Complexity_时间复杂度">Time Complexity 时间复杂度</h4><ul>
+<li>T(n) = O(1) + T( n/2)  = O（log n）</li>
+<li>T(n) = O(1) + T(n-1)  = O(n)<br>  时间复杂度为： O(n)</li>
+<li>T(n) =  O(1) + 2T(n/2)<br>  时间复杂度： 还是O(n)  </li>
 </ul>
+<p><em>Recursion or While Loop</em><br>推荐使用 while loop</p>
 <ul>
-<li>检查是否为空 null<br>检查null, 这个很重要</li>
-<li><p>对时间复杂度，空间复杂度的考虑</p>
+<li>递归消耗资源</li>
+<li>使用非递归， while 循环。<ul>
+<li>循环结束条件</li>
+<li>四点要素<ol>
+<li>start + 1 &lt; end;</li>
+<li>mid = start + (end - start) / 2;</li>
+<li>A[mid]==</li>
+<li></li>
+</ol>
 </li>
-<li><p>误区：</p>
-<ul>
-<li>做过的题，简单的题肯定能过  </li>
-<li>算法想出来就能过</li>
-<li>代码写出来就能过</li>
-<li>第一反应说最优的解决方法</li>
-</ul>
-</li>
-<li><p>面试官中的求职者</p>
-<ul>
-<li>你的代码看起来舒服吗？</li>
-<li>你的coding 习惯好么？</li>
-<li>和你交流舒服么？</li>
-</ul>
-</li>
-<li><p>编程的基本功</p>
-<ul>
-<li>程序风格 coding style</li>
-<li>coding 习惯， Bug free <ul>
-<li>异常处理，边界处理</li>
-</ul>
-</li>
-<li>沟通<ul>
-<li>让面试官时刻明白你的意图</li>
-<li>闷头就开始写 VS 每写一句话就BB半天</li>
-</ul>
-</li>
-<li>测试<br>主动给出 Testcase , Cover掉所以情况。</li>
-</ul>
-</li>
-<li><p>你真的会面试么？</p>
-<ul>
-<li>做题之前，是否在白纸写过一遍？</li>
-<li>刷了很多题，吃透了几道？</li>
-<li>题目不会的时候？<br>面试官是你的 Co-worker, (问些提示，尝试暴力的方法（搜素，遍历）)</li>
-<li>觉着面试官在为难你？</li>
-</ul>
-</li>
-<li><p>如何准备面试算法</p>
-<ul>
-<li>动态规划    DP</li>
-<li>反转二叉树</li>
-<li>总结和归类相似题目</li>
-</ul>
-</li>
-<li><p>全排列的问题 subsets</p>
-<ul>
-<li>Permutations</li>
-<li>Unique Permutations</li>
-<li>Combination Sum</li>
-<li>Letter Combination of a Photo Number</li>
-<li>Palindrome Par</li>
-</ul>
-</li>
-<li><p>offer</p>
-<ul>
-<li>理解</li>
-<li>与面试官交流</li>
-<li>理解不是背诵<br>学习思维方式和分析技巧，而不是某个题的解法</li>
 </ul>
 </li>
 </ul>
-<p><em>课程</em>  </p>
+<p><em>when and  How</em></p>
 <ul>
-<li>Binary Search </li>
-<li>Binary tree  divide Conquer</li>
-<li>Dynamic Programming  </li>
-<li>Linked List  </li>
-<li>Array &amp; Numbers</li>
-<li>Data structure</li>
-<li>Graph &amp; Search</li>
+<li>需要优化一个O(n)的暴力算法得到一个更快的算法。</li>
+<li>sorted assry or Rotated Sorted Array.</li>
+<li>找到第一个,或者是最后一个。</li>
 </ul>
+<h5 id="比O(n)_更优化的，几乎只有O(log_n)-">比O(n) 更优化的，几乎只有O(log n).</h5><h4 id="Sqrt(x)">Sqrt(x)</h4><p><em>search insert position</em><br><em>search in a big sorted Array.</em></p>
+<p><em>First Bad Version </em></p>
+<ul>
+<li>有重复的元素，和无重复的元素。<br>  有重复时，不能通过二分法，只能暴力的循环。</li>
+</ul>
+<p><em>find peak element </em><br>二分实现  </p>
+<ol>
+<li>first / last position of xxx</li>
+<li>去掉一定没有结果的一半， 保留一定有结果的一半。</li>
+</ol>
+<p>O(log n) search target in Rotated sorted Array.</p>
+<p><em>Recover Rotated Sorted Array.</em><br>三步翻转法：  </p>
 
       
     </div>
@@ -288,18 +246,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/11/19/BinaryTreeSearch-md/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          BinaryTreeSearch.md
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/05/Happy-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Happy.md</div>
+    <a href="/2015/11/12/strStr/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">strStr.md</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -328,7 +277,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="strStr-md" data-title="strStr.md" data-url="http://yoursite.com/2015/11/12/strStr-md/"></div>
+	<div class="ds-thread" data-thread-key="BinaryTreeSearch" data-title="BinaryTreeSearch.md" data-url="http://yoursite.com/2015/11/19/BinaryTreeSearch/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
