@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: ybook | chenchen</title>
+  <title>BinaryTreeSearch.md | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="somthing can&apos;t tell.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chenchen">
-<meta property="og:url" content="http://yoursite.com/tags/ybook/index.html">
+  <meta name="description" content="Binary  Search Tree二分查找">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BinaryTreeSearch.md">
+<meta property="og:url" content="http://yoursite.com/2015/11/19/BinaryTreeSearch-md/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="somthing can&apos;t tell.">
+<meta property="og:description" content="Binary  Search Tree二分查找">
+<meta property="og:updated_time" content="2015-11-19T17:24:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chenchen">
-<meta name="twitter:description" content="somthing can&apos;t tell.">
+<meta name="twitter:title" content="BinaryTreeSearch.md">
+<meta name="twitter:description" content="Binary  Search Tree二分查找">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -160,51 +161,141 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-BinaryTreeSearch-md" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/14/YBook/" class="archive-article-date">
-  	<time datetime="2015-06-14T06:03:43.000Z" itemprop="datePublished">6月 14</time>
+    <div class="article-meta">
+      <a href="/2015/11/19/BinaryTreeSearch-md/" class="article-date">
+  	<time datetime="2015-11-18T17:22:17.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/14/YBook/">YBook</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      BinaryTreeSearch.md
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ybook/">ybook</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Binary_Search_Tree">Binary  Search Tree</h3><p><em>二分查找</em><br><a id="more"></a></p>
+<h4 id="Time_Complexity_时间复杂度">Time Complexity 时间复杂度</h4><ul>
+<li>T(n) = O(1) + T( n/2)  = O（log n）</li>
+<li>T(n) = O(1) + T(n-1)  = O(n)<br>  时间复杂度为： O(n)</li>
+<li>T(n) =  O(1) + 2T(n/2)<br>  时间复杂度： 还是O(n)  </li>
+</ul>
+<p><em>Recursion or While Loop</em><br>推荐使用 while loop</p>
+<ul>
+<li>递归消耗资源</li>
+<li>使用非递归， while 循环。<ul>
+<li>循环结束条件</li>
+<li>四点要素<ol>
+<li>start + 1 &lt; end;</li>
+<li>mid = start + (end - start) / 2;</li>
+<li>A[mid]==</li>
+<li></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>when and  How</em></p>
+<ul>
+<li>需要优化一个O(n)的暴力算法得到一个更快的算法。</li>
+<li>sorted assry or Rotated Sorted Array.</li>
+<li>找到第一个,或者是最后一个。</li>
+</ul>
+<h5 id="比O(n)_更优化的，几乎只有O(log_n)-">比O(n) 更优化的，几乎只有O(log n).</h5><h4 id="Sqrt(x)">Sqrt(x)</h4><p><em>search insert position</em><br><em>search in a big sorted Array.</em></p>
+<p><em>First Bad Version </em></p>
+<ul>
+<li>有重复的元素，和无重复的元素。<br>  有重复时，不能通过二分法，只能暴力的循环。</li>
+</ul>
+<p><em>find peak element </em><br>二分实现  </p>
+<ol>
+<li>first / last position of xxx</li>
+<li>去掉一定没有结果的一半， 保留一定有结果的一半。</li>
+</ol>
+<p>O(log n) search target in Rotated sorted Array.</p>
+<p><em>Recover Rotated Sorted Array.</em><br>三步翻转法：  </p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/12/strStr-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">strStr.md</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="BinaryTreeSearch-md" data-title="BinaryTreeSearch.md" data-url="http://yoursite.com/2015/11/19/BinaryTreeSearch-md/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
