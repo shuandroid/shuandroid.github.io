@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Array | chenchen</title>
+  <title>chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Array &amp;amp; number第七次课">
+  <meta name="description" content="title: LinkedListdate: 2015-12-08 16:23:29
+tags: [Algorithm]Linked list第六次课">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Array">
-<meta property="og:url" content="http://yoursite.com/2015/12/08/Array/index.html">
+<meta property="og:title" content="chenchen">
+<meta property="og:url" content="http://yoursite.com/2015/12/28/LinkedList/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="Array &amp;amp; number第七次课">
-<meta property="og:updated_time" content="2015-12-08T08:36:52.000Z">
+<meta property="og:description" content="title: LinkedListdate: 2015-12-08 16:23:29
+tags: [Algorithm]Linked list第六次课">
+<meta property="og:updated_time" content="2015-12-27T21:05:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Array">
-<meta name="twitter:description" content="Array &amp;amp; number第七次课">
+<meta name="twitter:title" content="chenchen">
+<meta name="twitter:description" content="title: LinkedListdate: 2015-12-08 16:23:29
+tags: [Algorithm]Linked list第六次课">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +164,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Array" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LinkedList" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/08/Array/" class="article-date">
-  	<time datetime="2015-12-08T08:34:30.000Z" itemprop="datePublished">2015-12-08</time>
+      <a href="/2015/12/28/LinkedList/" class="article-date">
+  	<time datetime="2015-12-27T21:05:40.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     </div>
   
@@ -174,70 +177,49 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Array
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Array_&amp;_number">Array &amp; number</h2><p><strong>第七次课</strong>  </p>
-<a id="more"></a>  
+        <p>title: LinkedList<br>date: 2015-12-08 16:23:29</p>
+<h2 id="tags:_[Algorithm]">tags: [Algorithm]</h2><h2 id="Linked_list">Linked list</h2><p><strong>第六次课</strong><br><a id="more"></a>  </p>
+<p><em>加强对Java链表的理解</em>  </p>
+<p>技巧：  </p>
 <ul>
-<li><p>2个搭配最优，<br>  for其中一个数，让另外一个最优  </p>
+<li><p>Duplicating null  </p>
+<p>  把一个链表的头，即第一次，在创建一个新的链表，使该链表指向要处理链表的头，<br>  即使原来的头，变成现在的第二个。  </p>
 </li>
-<li><p>分割线</p>
+<li><p>在一个算法中，可以把一些实现的小功能化的代码，单独拿出来作为一个方法</p>
 </li>
-<li><p>检查是否有重复的树，利用hashmap  </p>
-</li>
+<li><p>快慢指针   fast slow pointer<br>  用来寻找链表的中间点：<br>  去搜索一个链表的中点：创建一个slow、fast指针，while循环，每次slow向下指一个，<br>  而fast向下指两个，当fast指到终点时，这时slow指向的正好是中间。</p>
+<pre><code><span class="keyword">private</span> ListNode findMiddle(ListNode head) {
+    ListNode slow = head, fast = head.<span class="keyword">next</span>;
+    <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.<span class="keyword">next</span> != <span class="keyword">null</span>) {
+        fast = fast.<span class="keyword">next</span>.<span class="keyword">next</span>;
+        slow = slow.<span class="keyword">next</span>;
+    }
+    <span class="keyword">return</span> slow;
+} 
+</code></pre></li>
 </ul>
-<p>n 个数，求几个数接近0 ，或是为0 ，或是一个target（利用指针）  </p>
+<p>O(nlogn)  </p>
+<p>merge sort(归并排序), quick sort(快排), heap sort(堆排序)<br>list : merge sort<br>array : quick sort  </p>
 <ul>
-<li>快速排序和归并排序，应该是要闭着眼睛可以写出来的。</li>
+<li>判断一个链表是否成环<br>  利用快慢指针<br>  如果fast与slow相遇，则链表里面有环。</li>
 </ul>
-<p><strong>题目</strong>  </p>
+<p><strong>题目：</strong>  </p>
 <ul>
-<li>median of two Sorted Array </li>
-<li>Maximum Subarray  </li>
-<li>Maximum Subarray</li>
-<li>Maximum Subarray II</li>
-<li>Maximum Subarray III</li>
-<li><p>Minimum Subarray  </p>
-<p>  可以去其相对数，变成Maximum Subarray, </p>
-</li>
-<li>Best time to buy and sell stock </li>
-<li>find k</li>
-<li>Subarray Sum  </li>
-<li>Subarray Sum Closet</li>
-<li>Two Sum</li>
-<li><p>Three Sum  </p>
-<p>  (可以求 -a = (b + c))  变成Two Sum 问题 </p>
-</li>
-<li>K Sum  </li>
-<li>Sort Colors</li>
-<li>partition Array</li>
-<li>Sort letter by Cases.  </li>
+<li>Remove Duplicates from  Sored List </li>
+<li>Remove Duplicates from  Sored List II  </li>
+<li>Reverse Linked List II</li>
+<li>Reverse Linked List #&160;#&160; 反转链表  </li>
+<li>partition list </li>
+<li>Reorder list </li>
+<li>Linked list Cycle</li>
+<li>Linked List Cycle II</li>
+<li>Rotate list</li>
+<li>Merge k Sorted Lists  </li>
+<li>Copy List with Random Pointer</li>
+<li>convert Sorted List</li>
 </ul>
-<blockquote>
-<p>chenzhao@hustunique.com</p>
-</blockquote>
 
       
     </div>
@@ -247,7 +229,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/12/08/LinkedList/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/12/28/design/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
@@ -257,8 +239,8 @@
     </a>
   
   
-    <a href="/2015/11/23/DP-II/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DP-II</div>
+    <a href="/2015/12/18/Summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Summary</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -287,7 +269,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Array" data-title="Array" data-url="http://yoursite.com/2015/12/08/Array/"></div>
+	<div class="ds-thread" data-thread-key="LinkedList" data-title="" data-url="http://yoursite.com/2015/12/28/LinkedList/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

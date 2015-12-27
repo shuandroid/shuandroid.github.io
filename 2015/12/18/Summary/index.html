@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>DP-II | chenchen</title>
+  <title>Summary | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DynamicProgramming  第二讲">
+  <meta name="description" content="LintCode关于算法的一些记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DP-II">
-<meta property="og:url" content="http://yoursite.com/2015/11/23/DP-II/index.html">
+<meta property="og:title" content="Summary">
+<meta property="og:url" content="http://yoursite.com/2015/12/18/Summary/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="DynamicProgramming  第二讲">
-<meta property="og:updated_time" content="2015-12-01T20:51:07.000Z">
+<meta property="og:description" content="LintCode关于算法的一些记录">
+<meta property="og:updated_time" content="2015-12-27T21:19:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DP-II">
-<meta name="twitter:description" content="DynamicProgramming  第二讲">
+<meta name="twitter:title" content="Summary">
+<meta name="twitter:description" content="LintCode关于算法的一些记录">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -161,11 +161,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-DP-II" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Summary" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/23/DP-II/" class="article-date">
-  	<time datetime="2015-11-22T20:46:58.000Z" itemprop="datePublished">2015-11-23</time>
+      <a href="/2015/12/18/Summary/" class="article-date">
+  	<time datetime="2015-12-17T21:02:52.000Z" itemprop="datePublished">2015-12-18</time>
 </a>
     </div>
   
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      DP-II
+      Summary
     </h1>
   
 
@@ -198,43 +198,129 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="DynamicProgramming_第二讲">DynamicProgramming  第二讲</h2><a id="more"></a>  
-<p>动态规划<br><em>有向图的最短距离，最长距离</em><br>（与贪婪的区别： 贪婪求当前的最好算法，但结果不一定是最优）.  </p>
+        <h1 id="LintCode">LintCode</h1><h3 id="关于算法的一些记录">关于算法的一些记录</h3><a id="more"></a>  
 <blockquote>
-<p>优先使用动态规划解决Dynamic Programming.  </p>
+<p>github 地址 ：<a href="https://github.com/shuandroid/LintCode/edit/master/README.md" target="_blank" rel="external">Algorithm</a>  </p>
 </blockquote>
-<h2 id="参看上节课程记录-">参看上节课程记录.</h2><ul>
-<li>单序列动态规划  <ul>
-<li>state</li>
-<li>function</li>
-<li></li>
-<li>例子： <ol>
-<li>palindrome Partitioning II<br>state： f[i] : 前i个字符，最少切几次，得到全部的是回文串。<br>functioin : f[]<br>initalize : f[i] = i-1,  （初始化）<br>answer： f[i] = min{f[j] + 1} , j&lt;i &amp;&amp; j + 1 ~ i 是一个回文串.<br>回文切割，对字符串进行切割处理，使其得到回文数。<br>单个字符也是一个回文串，切0刀.<br>能切出几个回文串，最少切几次.</li>
-<li></li>
+<p><strong>全部是在andorid studio 上面写成java项目</strong>  </p>
+<blockquote>
+<p>关于为何在AS上写代码，，因为方便，便于记录，和对以后的维护。  </p>
+</blockquote>
+<p><strong>记录内容：</strong>  </p>
+<h3 id="strStr">strStr</h3><blockquote>
+<p>第一节课内容  </p>
+</blockquote>
+<ul>
+<li><p>coding style   </p>
+<p>变量名， 空格， 换行，<br>Google style<br>Java程序花括号在最右边（同一行右侧）  </p>
+</li>
+<li><p>检查是否为空 null</p>
+<p>检查null, 这个很重要</p>
+</li>
+<li><p>对时间复杂度，空间复杂度的考虑  </p>
+</li>
+<li><p>题目：  </p>
+<ul>
+<li>Permutations</li>
+<li>Unique Permutations</li>
+<li>Combination Sum</li>
+<li>Letter Combination of a Photo Number</li>
+<li>Palindrome Par</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>第一节课内容结束，题目训练. 详情 <a href="https://github.com/shuandroid/LintCode/blob/master/JiuZhang/strStr.md" target="_blank" rel="external">strStr</a></p>
+</blockquote>
+<h3 id="Binary_Search_Tree_(二叉查找树)">Binary Search Tree (二叉查找树)</h3><blockquote>
+<p>第二次课， Binary Search Tree  </p>
+</blockquote>
+<ul>
+<li><p>T(n) = O(1) + T( n/2)  = O（log n）  </p>
+</li>
+<li><p>T(n) = O(1) + T(n-1)  = O(n)<br>  时间复杂度为： O(n)</p>
+</li>
+<li><p>T(n) =  O(1) + 2T(n/2)<br>  时间复杂度： 还是O(n)  </p>
+</li>
+</ul>
+<p><strong>Recursion or While Loop</strong><br>推荐使用 while loop</p>
+<ul>
+<li><p>递归消耗资源  </p>
+</li>
+<li><p>使用非递归， while 循环。  </p>
+<ul>
+<li>循环结束条件</li>
+<li>四点要素<ol>
+<li>start + 1 &lt; end;</li>
+<li>mid = start + (end - start) / 2;</li>
+<li>A[mid]==, &lt; , &gt; </li>
+<li>A[start] A[end] ? target </li>
 </ol>
 </li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>比O(n) 更优化的，几乎只有O(log n).  </p>
+</blockquote>
+<p><strong>题目</strong>  </p>
 <ul>
-<li><p>区间型动态规划  </p>
-</li>
-<li><p>独孤九剑：破鞭式<br>0的位置单独留出来。  </p>
+<li>Search Insert Position  </li>
+<li>Search a 2D Matrix  </li>
+<li>Search a 2D Matrix II</li>
+<li>Search in a Big Sorted Array</li>
+<li>First Bad Version </li>
+<li>Find Peak Element  </li>
+<li>Recover Rotated Sorted Array</li>
+<li>Recover Rotated Sorted Array II</li>
+<li>Find Minimum in Rotated Sorted Array</li>
+<li>Find Minimum in Rotated Sorted Array II</li>
+<li>Merge Sorted Array</li>
+<li>Merge Sorted Array II</li>
+<li>Rotate String  </li>
+</ul>
+<blockquote>
+<p>第二次课结束.  详情 <a href="https://github.com/shuandroid/LintCode/blob/master/JiuZhang/second.md" target="_blank" rel="external">BinartSearchTree</a></p>
+</blockquote>
+<h3 id="第三次">第三次</h3><blockquote>
+<p>miss  </p>
+</blockquote>
+<h3 id="Dynamic_Programming_I_(动态规划)">Dynamic Programming I (动态规划)</h3><blockquote>
+<p>第四次课 DP I  </p>
 <ul>
-<li>word break.<br>state : f[i]表示前i 个字符是否被完美切割.<br>function :<br>initalize :<br>answer : </li>
+<li>什么样的题适合使用动态规划<br>满足下面三个条件：<ul>
+<li>求最小最大</li>
+<li>求能不能，存不存在</li>
+<li>方案总数</li>
 </ul>
 </li>
-<li><p>双序列动态规划 ： </p>
+</ul>
+</blockquote>
+<h4 id="四个要素：">四个要素：</h4><ul>
+<li>状态 state  </li>
+<li>方程：function</li>
+<li>初始化: initialization</li>
+<li>答案：answer<br> 终点，始点<br><strong>题目：</strong>  </li>
+<li>unique paths 2.  </li>
+<li>climbing stairs.  </li>
+<li>jump game. &#160;&#160; jumo game 2.  </li>
+<li>two sum.  </li>
+<li>scramble String.  </li>
+<li>k sum  </li>
+<li>backpack  </li>
+</ul>
+<blockquote>
+<p>第四次课结束. 详情 <a href="https://github.com/shuandroid/LintCode/edit/master/JiuZhang/DynamicProgrammingI.md" target="_blank" rel="external">DP I</a>  </p>
+</blockquote>
+<h3 id="Dynamic_Programming_II">Dynamic Programming II</h3><blockquote>
+<p>第五次课 DP II  </p>
+</blockquote>
 <ul>
-<li>state :f[i][j] 代表了第一个sequence的前i个数字/字符，配上第二个sequence的前j个…</li>
-<li>function : f[i][j] = 研究第i个和第j个的匹配关系  </li>
-<li>initialize : 初始化：f[i][0]和f[]0[j]  </li>
-<li>answer : f[s1.length][s2.length()].  </li>
+<li>区间型动态规划  </li>
+<li>双序列动态规划  </li>
 </ul>
-</li>
-</ul>
-<p>longest common ancestor<br>longest increasing subsequence<br>edit distance.<br>distince subsequence<br>interleaving string<br>longest Common Subsequence.  最长公共子序列。<br>分析： 利用从大到小来一一去掉，到最后相同。<br>function: f[i][j] = max{f[i-1][j], f[i][j-1]}     //a[i] == b[j]<br>initialize : </p>
-<h4 id="题目：">题目：</h4><ul>
+<p><strong>题目：</strong>  </p>
+<ul>
 <li>palindrome Partitioning II.</li>
 <li>word break.</li>
 <li>longest common ancestor</li>
@@ -244,6 +330,96 @@
 <li>interleaving string</li>
 <li>longest common Subsequence.</li>
 </ul>
+<blockquote>
+<p>第五次课结束. 详情 : <a href="https://github.com/shuandroid/LintCode/edit/master/JiuZhang/DynamicProgramming2.md" target="_blank" rel="external">DP II</a>  </p>
+</blockquote>
+<h3 id="LinkedList">LinkedList</h3><blockquote>
+<p>第六次课 LinkedList  </p>
+</blockquote>
+<p><strong>加强对Java链表的理解</strong>  </p>
+<p>技巧：  </p>
+<ul>
+<li><p>Duplicating null  </p>
+<p>  把一个链表的头，即第一次，在创建一个新的链表，使该链表指向要处理链表的头，<br>  即使原来的头，变成现在的第二个。  </p>
+</li>
+<li><p>快慢指针<br>  用来寻找链表的中间点：<br>  去搜索一个链表的中点：创建一个slow、fast指针，while循环，每次slow向下指一个，<br>  而fast向下指两个，当fast指到终点时，这时slow指向的正好是中间。</p>
+<pre><code><span class="keyword">private</span> ListNode findMiddle(ListNode head) {
+    ListNode slow = head, fast = head.<span class="keyword">next</span>;
+    <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.<span class="keyword">next</span> != <span class="keyword">null</span>) {
+        fast = fast.<span class="keyword">next</span>.<span class="keyword">next</span>;
+        slow = slow.<span class="keyword">next</span>;
+    }
+    <span class="keyword">return</span> slow;
+} 
+</code></pre></li>
+</ul>
+<p><strong>题目：</strong>  </p>
+<ul>
+<li>Remove Duplicates from  Sored List </li>
+<li>Remove Duplicates from  Sored List II  </li>
+<li>Reverse Linked List II</li>
+<li>Reverse Linked List  反转链表  </li>
+<li>partition list </li>
+<li>Reorder list </li>
+<li>Linked list Cycle</li>
+<li>Linked List Cycle II</li>
+<li>Rotate list</li>
+<li>Merge k Sorted Lists  </li>
+<li>Copy List with Random Pointer</li>
+<li>convert Sorted List</li>
+</ul>
+<blockquote>
+<p>第六次课结束   详情 ：<a href="https://github.com/shuandroid/LintCode/edit/master/JiuZhang/LinkedList.md" target="_blank" rel="external">LinkedList</a>  </p>
+</blockquote>
+<h3 id="Array">Array</h3><blockquote>
+<p>第七次课 array  </p>
+</blockquote>
+<p><strong>题目</strong>  </p>
+<ul>
+<li>median of two Sorted Array </li>
+<li>Maximum Subarray  </li>
+<li>Maximum Subarray</li>
+<li>Maximum Subarray II</li>
+<li>Maximum Subarray III</li>
+<li>Minimum Subarray  </li>
+<li>Best time to buy and sell stock </li>
+<li>find k</li>
+<li>Subarray Sum  </li>
+<li>Subarray Sum Closet</li>
+<li>Two Sum</li>
+<li>K Sum  </li>
+<li>Sort Colors</li>
+<li>partition Array</li>
+<li>Sort letter by Cases.  </li>
+</ul>
+<blockquote>
+<p>第七次课结束 详情 : <a href="https://github.com/shuandroid/LintCode/edit/master/JiuZhang/Array.md" target="_blank" rel="external">Array</a>  </p>
+</blockquote>
+<h3 id="Data_Structure">Data Structure</h3><blockquote>
+<p>第八次课  Data Structure  </p>
+</blockquote>
+<ul>
+<li>递增栈  </li>
+<li>递减栈  </li>
+</ul>
+<p><strong>题目：</strong>   </p>
+<ul>
+<li>Largest Rectangle in Histogrm   </li>
+<li>数字三角形</li>
+<li>happy Number</li>
+<li>rehashing </li>
+<li>LRU Cache  </li>
+<li>LFU Cache  </li>
+<li>Median Number  </li>
+</ul>
+<blockquote>
+<p>第八次课结束 详情 ： <a href="https://github.com/shuandroid/LintCode/edit/master/JiuZhang/DataStructure.md" target="_blank" rel="external">Data Structure</a>  </p>
+</blockquote>
+<p><strong>目前就是这样，如果有可能，以后还会继续添加新的内容</strong>  </p>
+<p><strong>END</strong>  </p>
+<blockquote>
+<p>chenzhao@hustunique.com<br>Blog:  <a href="http://shuandroid.github.io/" target="_blank" rel="external">http://shuandroid.github.io/</a><br>算法笔记 欢迎交流学习<br>以上为自己在算法学习中的一些小收获和记录，不对之处请指出。  </p>
+</blockquote>
 
       
     </div>
@@ -253,18 +429,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/12/09/Array/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/12/28/LinkedList/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Array
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2015/11/22/DP-I/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DPI</div>
+    <a href="/2015/12/17/Data-Structure/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Data Structure</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -293,7 +469,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="DP-II" data-title="DP-II" data-url="http://yoursite.com/2015/11/23/DP-II/"></div>
+	<div class="ds-thread" data-thread-key="Summary" data-title="Summary" data-url="http://yoursite.com/2015/12/18/Summary/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
