@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>chenchen</title>
+  <title>内存泄漏 | chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 内存泄漏date: 2016-01-09 16:34:30tags: [Android, JVM]
-内存泄漏：常见原因及措施">
+  <meta name="description" content="内存泄漏：常见原因及措施">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chenchen">
-<meta property="og:url" content="http://yoursite.com/2016/04/05/内存泄漏/index.html">
+<meta property="og:title" content="内存泄漏">
+<meta property="og:url" content="http://yoursite.com/2016/01/09/内存泄漏/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="title: 内存泄漏date: 2016-01-09 16:34:30tags: [Android, JVM]
-内存泄漏：常见原因及措施">
-<meta property="og:updated_time" content="2016-04-05T01:21:48.000Z">
+<meta property="og:description" content="内存泄漏：常见原因及措施">
+<meta property="og:updated_time" content="2016-04-05T01:35:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chenchen">
-<meta name="twitter:description" content="title: 内存泄漏date: 2016-01-09 16:34:30tags: [Android, JVM]
-内存泄漏：常见原因及措施">
+<meta name="twitter:title" content="内存泄漏">
+<meta name="twitter:description" content="内存泄漏：常见原因及措施">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -106,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Algorithm/" style="font-size: 17.5px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/DPI/" style="font-size: 10px;">DPI</a> <a href="/tags/Library/" style="font-size: 10px;">Library</a> <a href="/tags/Mvvm/" style="font-size: 10px;">Mvvm</a> <a href="/tags/Network/" style="font-size: 15px;">Network</a> <a href="/tags/RecyclerView/" style="font-size: 10px;">RecyclerView</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Suooprt/" style="font-size: 10px;">Suooprt</a> <a href="/tags/adapter/" style="font-size: 10px;">adapter</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android，-Network，-volley，-first/" style="font-size: 10px;">android， Network， volley， first</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 12.5px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design/" style="font-size: 12.5px;">design</a> <a href="/tags/fourth/" style="font-size: 10px;">fourth</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/git-多分支/" style="font-size: 10px;">git 多分支</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/mk/" style="font-size: 10px;">mk</a> <a href="/tags/netWork/" style="font-size: 10px;">netWork</a> <a href="/tags/recycler/" style="font-size: 10px;">recycler</a> <a href="/tags/resource/" style="font-size: 10px;">resource</a> <a href="/tags/second/" style="font-size: 10px;">second</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/third/" style="font-size: 10px;">third</a> <a href="/tags/view/" style="font-size: 15px;">view</a> <a href="/tags/volley/" style="font-size: 15px;">volley</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+						<a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 16px;">Android</a> <a href="/tags/DPI/" style="font-size: 10px;">DPI</a> <a href="/tags/JVM/" style="font-size: 12px;">JVM</a> <a href="/tags/Library/" style="font-size: 10px;">Library</a> <a href="/tags/Mvvm/" style="font-size: 10px;">Mvvm</a> <a href="/tags/Network/" style="font-size: 14px;">Network</a> <a href="/tags/RecyclerView/" style="font-size: 10px;">RecyclerView</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Suooprt/" style="font-size: 10px;">Suooprt</a> <a href="/tags/adapter/" style="font-size: 10px;">adapter</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android，-Network，-volley，-first/" style="font-size: 10px;">android， Network， volley， first</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 12px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design/" style="font-size: 12px;">design</a> <a href="/tags/fourth/" style="font-size: 10px;">fourth</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/git-多分支/" style="font-size: 10px;">git 多分支</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/mk/" style="font-size: 10px;">mk</a> <a href="/tags/netWork/" style="font-size: 10px;">netWork</a> <a href="/tags/recycler/" style="font-size: 10px;">recycler</a> <a href="/tags/resource/" style="font-size: 10px;">resource</a> <a href="/tags/second/" style="font-size: 10px;">second</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/third/" style="font-size: 10px;">third</a> <a href="/tags/view/" style="font-size: 14px;">view</a> <a href="/tags/volley/" style="font-size: 14px;">volley</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
 					</div>
 				</section>
 				
@@ -167,8 +164,8 @@
       <div class="body-wrap"><article id="post-内存泄漏" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/05/内存泄漏/" class="article-date">
-  	<time datetime="2016-04-05T01:21:48.000Z" itemprop="datePublished">2016-04-05</time>
+      <a href="/2016/01/09/内存泄漏/" class="article-date">
+  	<time datetime="2016-01-09T08:34:30.000Z" itemprop="datePublished">2016-01-09</time>
 </a>
     </div>
   
@@ -177,10 +174,31 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      内存泄漏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: 内存泄漏<br>date: 2016-01-09 16:34:30<br>tags: [Android, JVM]</p>
-<h2 id="内存泄漏：常见原因及措施">内存泄漏：常见原因及措施</h2><a id="more"></a>
+        <h2 id="内存泄漏：常见原因及措施">内存泄漏：常见原因及措施</h2><a id="more"></a>
 <p><strong>原因</strong></p>
 <ol>
 <li>资源对象没关闭造成的内存泄漏</li>
@@ -329,9 +347,18 @@ try {
     
 <nav id="article-nav">
   
+    <a href="/2016/01/10/泄漏工具/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          内存泄漏分析工具
+        
+      </div>
+    </a>
   
-    <a href="/2016/04/05/泄漏工具/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2015/12/23/MVVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVVM</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -360,7 +387,7 @@ try {
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="内存泄漏" data-title="" data-url="http://yoursite.com/2016/04/05/内存泄漏/"></div>
+	<div class="ds-thread" data-thread-key="内存泄漏" data-title="内存泄漏" data-url="http://yoursite.com/2016/01/09/内存泄漏/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
