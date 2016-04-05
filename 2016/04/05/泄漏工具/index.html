@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: design | chenchen</title>
+  <title>chenchen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="somthing can&apos;t tell.">
-<meta property="og:type" content="website">
+  <meta name="description" content="title: 内存泄漏分析工具date: 2016-01-10 16:34:30tags: [Android, JVM]
+android 内存泄漏分析工具 LeakCanary">
+<meta property="og:type" content="article">
 <meta property="og:title" content="chenchen">
-<meta property="og:url" content="http://yoursite.com/tags/design/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/泄漏工具/index.html">
 <meta property="og:site_name" content="chenchen">
-<meta property="og:description" content="somthing can&apos;t tell.">
+<meta property="og:description" content="title: 内存泄漏分析工具date: 2016-01-10 16:34:30tags: [Android, JVM]
+android 内存泄漏分析工具 LeakCanary">
+<meta property="og:updated_time" content="2016-04-05T01:21:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chenchen">
-<meta name="twitter:description" content="somthing can&apos;t tell.">
+<meta name="twitter:description" content="title: 内存泄漏分析工具date: 2016-01-10 16:34:30tags: [Android, JVM]
+android 内存泄漏分析工具 LeakCanary">
   
     <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
   
@@ -160,82 +164,135 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-泄漏工具" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/19/Design/" class="archive-article-date">
-  	<time datetime="2015-12-18T21:30:29.000Z" itemprop="datePublished">12月 19</time>
+    <div class="article-meta">
+      <a href="/2016/04/05/泄漏工具/" class="article-date">
+  	<time datetime="2016-04-05T01:21:44.000Z" itemprop="datePublished">2016-04-05</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/19/Design/">Design</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design/">design</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/16/DesignSupportLibrary/" class="archive-article-date">
-  	<time datetime="2015-07-16T13:16:11.000Z" itemprop="datePublished">7月 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/16/DesignSupportLibrary/">DesignSupportLibrary</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 内存泄漏分析工具<br>date: 2016-01-10 16:34:30<br>tags: [Android, JVM]</p>
+<h2 id="android_内存泄漏分析工具_LeakCanary">android 内存泄漏分析工具 LeakCanary</h2><a id="more"></a>
+<p><strong>内存泄漏的原因：</strong><br>某个对象在释放的时候由于被其他对象持有，而没有释放，造成了内存泄漏<br>在手机上即可查看问题即引用关系， MAT需要分析HeapDump, 找Path To GC Roots<br>在app的build.gradle中加入依赖：</p>
+<pre><code><span class="title">dependencies</span> {
+    <span class="title">debugCompile</span> <span class="string">'com.squareup.leakcanary:leakcancary-android:1.3.2'</span>
+    releaseCompile <span class="string">'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'</span>
+    testCompile <span class="string">'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'</span>
+}
+</code></pre><p>然后在Application中加入类似如下的代码：</p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplication</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Application</span> {</span>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Library/">Library</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Suooprt/">Suooprt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design/">design</a></li></ul>
-	</div>
+    <span class="annotation">@Override</span>
+    public void onCreate() {
+        <span class="keyword">super</span>.onCreate();
+        <span class="type">LeakCanary</span>.install(<span class="keyword">this</span>);
+    }
+}
+</code></pre><p>leakcancary其实在本机上做了HeapDump,然后对生成的<code>hprof</code>分析文件，进行结果展示。<br>和手工进行MAT分析步骤基本一致。</p>
+<blockquote>
+<p>因为存在<code>debugCompile</code>和<code>releaseCompile``testCompile</code>所有不影响对外版的APK<br>目前只可以一次报一个泄漏问题</p>
+</blockquote>
+<h4 id="想要检测更多？">想要检测更多？</h4><p>获取一个RefWatcher,用来后续监控可能发生泄漏的对象</p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">ExampleApplication</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Application</span> {</span>
+    <span class="keyword">private</span> static <span class="type">RefWatcher</span> sRefWatcher;
 
-          
+    <span class="annotation">@Override</span>
+    public void onCreate() {
+        <span class="keyword">super</span>.onCreate();
+        sRefWatcher = <span class="type">LeakCanary</span>.install(<span class="keyword">this</span>);
+    }
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    public static <span class="type">RefWatcher</span> getRefWatcher() {
+        <span class="keyword">return</span> sRefWatcher;
+    }
+}
+</code></pre><p>当要去监控某个可能存在内存泄漏的对象(myContext)时:</p>
+<pre><code><span class="tag">ExampleApplication</span><span class="class">.getRefWatcher</span>()<span class="class">.watch</span>(<span class="tag">myContext</span>);
+</code></pre><p><strong>监控fragment</strong></p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">CustomFragment</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Fragment</span> {</span>
+    <span class="annotation">@Override</span>
+    public void onDestroy() {
+        <span class="keyword">super</span>.onDestroy();
+        <span class="type">ExampleApplication</span>.getRefWatcher().watch(<span class="keyword">this</span>);
+    }
+}
+</code></pre><p>Fragment和Activity实例一样可能持有大量的视图以及视图需要的资源(bitmap)，可以在<br>Fragment onDestroy方法中加入实现</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/05/内存泄漏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/23/MVVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVVM</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="泄漏工具" data-title="" data-url="http://yoursite.com/2016/04/05/泄漏工具/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
