@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android 开发艺术探索 | chenchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="andorid 开发艺术探索 心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 开发艺术探索">
+<meta property="og:url" content="http://yoursite.com/2016/02/14/prepare/artOfAndroid/index.html">
+<meta property="og:site_name" content="chenchen">
+<meta property="og:description" content="andorid 开发艺术探索 心得">
+<meta property="og:updated_time" content="2016-04-05T01:38:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 开发艺术探索">
+<meta name="twitter:description" content="andorid 开发艺术探索 心得">
+  
+    <link rel="alternative" href="/atom.xml" title="chenchen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://news.mydrivers.com/Img/20100622/10062490.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">chenchen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">be all you can be.</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 16px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/Art/" style="font-size: 12px;">Art</a> <a href="/tags/Ashmem/" style="font-size: 10px;">Ashmem</a> <a href="/tags/DPI/" style="font-size: 10px;">DPI</a> <a href="/tags/JVM/" style="font-size: 12px;">JVM</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Library/" style="font-size: 10px;">Library</a> <a href="/tags/Mvvm/" style="font-size: 10px;">Mvvm</a> <a href="/tags/Network/" style="font-size: 14px;">Network</a> <a href="/tags/RecyclerView/" style="font-size: 10px;">RecyclerView</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Suooprt/" style="font-size: 10px;">Suooprt</a> <a href="/tags/adapter/" style="font-size: 10px;">adapter</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android，-Network，-volley，-first/" style="font-size: 10px;">android， Network， volley， first</a> <a href="/tags/anim/" style="font-size: 10px;">anim</a> <a href="/tags/animation/" style="font-size: 12px;">animation</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/design/" style="font-size: 12px;">design</a> <a href="/tags/fourth/" style="font-size: 10px;">fourth</a> <a href="/tags/frame/" style="font-size: 10px;">frame</a> <a href="/tags/git-多分支/" style="font-size: 10px;">git 多分支</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/material-design/" style="font-size: 10px;">material design</a> <a href="/tags/mk/" style="font-size: 10px;">mk</a> <a href="/tags/netWork/" style="font-size: 10px;">netWork</a> <a href="/tags/recycler/" style="font-size: 10px;">recycler</a> <a href="/tags/resource/" style="font-size: 10px;">resource</a> <a href="/tags/second/" style="font-size: 10px;">second</a> <a href="/tags/square/" style="font-size: 10px;">square</a> <a href="/tags/third/" style="font-size: 10px;">third</a> <a href="/tags/view/" style="font-size: 14px;">view</a> <a href="/tags/volley/" style="font-size: 14px;">volley</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/ybook/" style="font-size: 10px;">ybook</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">做好眼前的事</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">chenchen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://news.mydrivers.com/Img/20100622/10062490.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">chenchen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">be all you can be.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/shuandroid" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-prepare/artOfAndroid" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/14/prepare/artOfAndroid/" class="article-date">
+  	<time datetime="2016-02-14T08:34:30.000Z" itemprop="datePublished">2016-02-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 开发艺术探索
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Art/">Art</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="andorid_开发艺术探索_心得">andorid 开发艺术探索 心得</h1><a id="more"></a>
+<h2 id="第一章">第一章</h2><ol>
+<li><strong> activity 的生命周期，包含在特殊情况下的处理，一些异常的分析</strong>。  </li>
+<li><p><strong>activity 的四种启动模式</strong></p>
+<ul>
+<li>standard ： 标准模式</li>
+<li><p>singleTop : 栈顶复用模式</p>
+<p>  如果当前activity在栈顶，则不会重新创建</p>
+</li>
+<li><p>singleTask : 站内复用模式（也是一种单实例模式）</p>
+<p>  当前栈内存在该activity，则不会重新创建，会把当前已经存在的activity回复到栈顶，同时clearTop(), 把在该activity前的activity回收掉.</p>
+</li>
+<li><p>singleInstance : 单实例模式，对singleTask的加强.</p>
+<p>  使当前的activity单独处于一个单独的栈内，避免了clearTop()问题.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><em>TaskAffinity</em><br>属性，决定当前activity所在的栈.<br>任务栈分为：</p>
+<ul>
+<li><p>前台任务栈</p>
+<p>  当前活动的activity</p>
+</li>
+<li><p>后台任务栈</p>
+<p>  当前处于暂停的activity.</p>
+</li>
+</ul>
+<ol>
+<li>activity 的FLAG</li>
+<li>IntentFilter 的匹配规则.</li>
+</ol>
+<h2 id="第三章">第三章</h2><p><strong>view的事件传递</strong>  </p>
+<p><strong>3.1 view 的基础知识</strong></p>
+<ol>
+<li><p>什么是view<br> Viewgroup 内部包含许多个控件</p>
+</li>
+<li><p>view 的位置参数  </p>
+<ul>
+<li>top (view左上角纵坐标)</li>
+<li>left (左上角横坐标)  </li>
+<li>right (右下角横坐标) </li>
+<li>bottom (右下角纵坐标)</li>
+</ul>
+</li>
+<li><p>MotionEvent 和 TouchSlop<br> motionEvent : 手指接触屏幕所产生的一系列事件，几个典型事件： </p>
+<ul>
+<li>ACTION_DOWN : 手指刚接触屏幕</li>
+<li>ACTION_MOVE : 手指在屏幕上移动</li>
+<li><p>ACTION_UP : 手指从屏幕上松开的一瞬间。</p>
+<p>正常情况下，一次手指触摸屏幕的行为会触发一系列点击事件 ： </p>
+</li>
+<li><p>点击屏幕后松开 ： DOWN-&gt;UP</p>
+</li>
+<li><p>点击屏幕后滑动一会松开 ： DOWN -&gt; MOVE -&gt;… -&gt; MOVE -&gt; UP</p>
+<p><code>getX/getY</code> : 返回的是相对于当前 view 左上角的x 和 y 坐标；<br><code>getRawX/getRawY</code> : 返回的是相对于手机屏幕左上角的x 和 y 坐标；  </p>
+</li>
+</ul>
+</li>
+</ol>
+<p><em>TouchSlop</em><br><code>TouchSlop</code>是系统所能识别出的被认为是滑动的最小距离。<br>可以通过： <code>ViewConfiguration.get(getContext()).getScaledTouchSlop()</code><br>来获取到。  </p>
+<ol>
+<li>VelocityTracker , GestureDetector 和 Scroller  </li>
+</ol>
+<p><strong>VelocityTracker</strong><br>为速度追踪，用于追踪手指哎滑动过程中的速度。包括水平和竖直方向上的速度.<br>首先在view 的onTouchEvent方法中追踪当前单击事件的速度  </p>
+<pre><code>VelocityTracker velocityTracker = VelocityTracker.obtain<span class="params">()</span>;
+velocityTracker.addMovement<span class="params">(event)</span>;
+<span class="comment">//获取速度</span>
+velocityTracker.computeCurrentVelocity<span class="params">(<span class="number">1000</span>)</span>;
+int xVelocity = <span class="params">(int)</span> velocityTracker.getXVelocity<span class="params">()</span>;
+int yVelocity = <span class="params">(int)</span> velocityTracker.getYVelocity<span class="params">()</span>;
+</code></pre><blockquote>
+<p>获取速度之前，一定要先获取速度<code>computeCurrentVelocity()</code>。<br>这里的速度是指一段时间内手指所划过的像素数.</p>
+</blockquote>
+<p>当不需要的时候，需要调用<code>clear()</code>来重置并回收内存。</p>
+<pre><code><span class="tag">velocityTracker</span><span class="class">.clear</span>();
+<span class="tag">velocityTracker</span><span class="class">.recycle</span>();
+</code></pre><p><strong>GestureDetector</strong><br>手势检测, 用于辅助检测用户的单击、滑动、长按、双击等行为.  </p>
+<p>创建一个GestureDetector 对象，并实现 OnGestureListener 接口,然后接管view 的onTouchEvent(),  </p>
+<pre><code>GestureDetector gesture = <span class="keyword">new</span> GestureDetector(<span class="keyword">this</span>);
+gesture.setIsLongpressEnabled(<span class="literal">false</span>);
+</code></pre><p>在待监听View 的onTouchEvent方法中，实现  </p>
+<pre><code><span class="title">boolean</span> consume = gesture.<span class="built_in">on</span>TouchEvent(event);
+<span class="title">return</span> consume;
+</code></pre><blockquote>
+<p>如果是在建通滑动相关的，建议在onTouchEvent中实现，如果要监听双击这种行为的话，那么就使用<br><code>GesutureDetector</code>.  </p>
+</blockquote>
+<p><strong>Scroller</strong><br>弹性滑动对象，用于实现view的弹性滑动。<br><code>Scroller</code> 本身无法让view弹性滑动，它需要和view的<code>computeScroller</code>方法配合使用<br>才能完成这个功能。  </p>
+<p><strong>3.2 View 的滑动</strong>  </p>
+<p>通过三种方式可实现View 的滑动 ：  </p>
+<ul>
+<li>通过view本身提供的<code>scrollTo/scrollBy</code> 方法来实现滑动；  </li>
+<li>第二种是通过动画给view 施加平移效果来实现滑动；</li>
+<li>第三种是通过改变<code>View</code>的<code>LayoutParams</code> 使得View重新布局从而实现滑动。  </li>
+</ul>
+<h3 id="使用_scrollTo/scrollBy">使用    <code>scrollTo/scrollBy</code></h3><p>view 的边缘是指view 的位置，由四个顶点组成，而view 的内容边缘是指<br>view 中的内容的边缘。 <code>scrollTo</code>和<code>scrollBy</code>只能改变view 内容的位置<br>而不能改变view在布局中的位置。  </p>
+<h3 id="使用动画">使用动画</h3><ol>
+<li><p>分为传统的view动画，和属性动画。  </p>
+<blockquote>
+<p>注意：如果使用属性动画，为了兼容3.0以下的版本，需要采用开源库nineoldandroids.  </p>
+</blockquote>
+</li>
+<li><p>view 动画是对view的影像做操作，它并不能真正改变view的位置参数。<br> 包括宽和高，如果希望动画后的状态保留，需要将<code>fillAfter</code>属性设置为<code>true</code>.  </p>
+</li>
+<li><p>view动画： 不能简单的给一个view做平移动画后并且希望它在新位置继续触发一些单击事件.<br> 在3.0 上，可以通过属性动画解决这个问题。</p>
+</li>
+</ol>
+<h3 id="改变布局参数">改变布局参数</h3><p>即改变<code>LayoutParams</code>.  </p>
+<pre><code>MarginLayoutParams params = (MarginLayoutParams) mButton.getLayoutParams()<span class="comment">;  </span>
+params.width += 100<span class="comment">;</span>
+params.leftMargin += 100<span class="comment">;</span>
+mButton.requestLayout()<span class="comment">;</span>
+</code></pre><p>通过改变<code>LayoutParams</code> 的方式去实现View 的滑动同样是一种很灵活的方法，需要根据<br>不同情况去做不同的处理。  </p>
+<h3 id="各种滑动方式的对比">各种滑动方式的对比</h3><ul>
+<li>scrollTo/scrollBy<br>  操作简单，适合对view内容滑动, 但只能滑动view的内容，并不能滑动view本身.</li>
+<li>动画：<br>  操作简单，主要试用于没有交互的view和实现复杂的动画效果。</li>
+<li>改变布局参数 ：<br>  操作稍微复杂，适用于有交互的view  </li>
+</ul>
+<h2 id="弹性滑动">弹性滑动</h2><p><strong>3.3 弹性滑动</strong>  </p>
+<ol>
+<li>使用Scroller 滑动  </li>
+<li><p>通过动画<br> 动画本身就是一种渐进的过程，通过它来实现的滑动天然就具有弹性效果。</p>
+</li>
+<li><p>使用延时策略<br> 具体来说可以使用<code>Handler</code>或<code>view</code>的 <code>postDelayed</code></p>
+</li>
+</ol>
+<h2 id="3-4_View_的事件分发机制">3.4 View 的事件分发机制</h2><p><strong>view 的事件分发机制</strong>  </p>
+<blockquote>
+<p>view的一个难题滑动冲突，它的解决方法的理论基础就是时间分发机制.  </p>
+</blockquote>
+<p><strong>3.4.1 点击事件的传递规则</strong>      </p>
+<ul>
+<li><p>public boolean dispatchTouchEvent(MotionEvent ev)  </p>
+<p>  用来进行事件的分发。如果事件能够传递到当前view， 那么此方法一定会被调用，<br>  返回结果受当前view的<code>onTouchEvent</code>和下级view 的<code>dispatchTouchEvent()</code><br>  的影响，表示是否消耗当前事件。  </p>
+</li>
+<li><p>public boolean onInterceptTouchEvent(MotionEvent event)  </p>
+<p>  在上述方法内部调用，用来判断是否拦截某个事件，如果当前view拦截了某个事件，那<br>  么在同一个事件序列当中，此方法不会被再次调用。返回结果表示是否拦截当前事件。  </p>
+</li>
+<li><p>public boolean onTouchEvent(MotionEvent event)  </p>
+<p>  在<code>dispatchTouchEvent()</code>方法中调用，用来处理点击事件，返回结果表示是否消耗<br>  当前事件，如果不消耗，则在同一个事件序列中，当前view无法再次接收到事件。  </p>
+</li>
+</ul>
+<p>伪代码：  </p>
+<pre><code><span class="title">public</span> boolean dispatchTouchEvent(MotionEvent ev) {
+    <span class="title">boolean</span> consume = <span class="built_in">false</span>;
+    <span class="title">if</span> (<span class="built_in">on</span>InterceptTouchEvent(ev)) {
+        <span class="title">consume</span> = <span class="built_in">on</span>TouchEvent(ev);
+    } <span class="title">else</span> {
+        <span class="title">consume</span> = child.dispatchTouchEvent(ev);
+    }
+    <span class="title">return</span> consume;
+}
+</code></pre><blockquote>
+<p>注： 给view设置的<code>OnTouchListener</code>, 其优先级比<code>onTouchEvent</code>要高。<br>当产生一个点击事件后，它的传递过程遵循如下顺序： activity -&gt; window -&gt; view.  </p>
+</blockquote>
+<p><strong>关于事件传递</strong>  </p>
+<ol>
+<li><p>同一个事件序列是指从手指接触屏幕的那一刻起，到手指离开屏幕的那一刻结束<br>在这个过程中，事件以<strong>down</strong> 开始，中间含有数量不定的<strong>move</strong> 事件，最终以<strong>up</strong> 事件结束。  </p>
+</li>
+<li><p>正常情况下，一个事件序列只能被一个view拦截且消耗。</p>
+</li>
+<li><p>某个view一旦决定拦截，那么这一个事件序列都只能由它来处理(如果事件能够传递给它的话)，并且<br>它的<code>onInterceptTouchEvent</code>不会再被调用。  </p>
+</li>
+<li><p>某个view一旦开始处理事件，如果它不消耗ACTION_DOWN 事件(<code>onTouchEvent</code>返回了false),<br>那么同一个事件序列的其他事件都不会再交它来处理，并且事件将重新交由它的父元素去处理，即父元素的<br><code>onTouchEvent</code> ,会被调用。</p>
+</li>
+<li><p>如果view不消耗除ACTION_DOWN以外的其他事件，那么这个点记事件会消失，此时父元素的<code>onTouchEvent</code><br>并不会被调用，并且当前view可以持续收到后续的事件，最终这些消失的点击事件会传递给avtivity处理。  </p>
+</li>
+<li><p>ViewGroup默认不拦截任何事件。android源码中viewGroup的<code>onInterceptTouchEvent</code>方法默认为false。  </p>
+</li>
+<li>view没有<code>onInterceptTouchEvent</code>方法，一旦有点击事件传递给它，那么它的<code>onTouchEvent()</code>方法就会被调用.  </li>
+<li><p>view 的<code>onTouchEvent()</code>默认都会消耗事件(返回true)， 除非它是不可点击的(<code>clickable</code> 和<code>longClickable</code> 同时为<code>false</code>).<br>view 的<code>longClickable</code>属性默认都为false, <code>clickable</code>属性要分情况，比如 <code>Button</code> 的 <code>clickable</code> 默认为<code>true</code>，而<br><code>TextView</code>的默认为<code>false</code>.  </p>
+</li>
+<li><p><code>view</code>的<code>enable</code>属性不影响<code>onTouchEvent</code>的默认返回值。</p>
+</li>
+<li><p><code>onClick</code>会发生的前提是当前<code>view</code>是可点击的，并且它收到了down 和 up 的事件。</p>
+</li>
+<li><p>事件的传递是由外向内的，即事件总是先传递给父元素，然后再由父元素分发给view，通过<code>requestDisallowInterceptTouchEvent()</code><br>方法可以在子元素中干预父元素的分发过程，但是<strong>ACTION_DOWN</strong> 事件除外。</p>
+</li>
+</ol>
+<p><strong>3.4.2 事件分发的源码分析</strong>  </p>
+<ol>
+<li>Activity 对事件的分发过程  </li>
+<li></li>
+</ol>
+<h2 id="4-_View_的工作原理">4. View 的工作原理</h2><p><strong>ViewRoot 和 DecorView</strong></p>
+<p><strong>ViewRoot</strong>对应于ViewRootImpl类，它是连接WindowManger和DecorView的纽带，view的三大流程均是通过ViewRoot完成的。</p>
+<p><strong>MesureSpec</strong></p>
+<p>它在很大程度上决定了一个view 的尺寸规格</p>
+<blockquote>
+<p>代表一个32位的int值， 高两位代表SpecMode(测量模式), 低30位代表SpecSize(某种测量模式下的大小);</p>
+</blockquote>
+<p>view的工作流程只要是指<code>mesaure</code>、<code>layout</code>、<code>draw</code>, 这三大流程。</p>
+<blockquote>
+<p>measure 确定view 的测量宽、高，， layout确定view的最终宽、高和四个顶点的位置， 而draw 则将view 绘制到屏幕上。</p>
+</blockquote>
+<h3 id="measure过程">measure过程</h3><p>分为 view 的measure过程， viewGroup的measure过程。</p>
+<ol>
+<li>view 的measure过程</li>
+</ol>
+<p>由measure方法来完成， measure方法是一个final 类型的方法， 这意味着子类不能重写此方法。<br>在view的measure方法中，只会去调用view的onMesure方法，因此只需要看onMesure的实现即可，<br>view的 onMesure()如下:</p>
+<pre><code>protected void onMesure<span class="params">(int widthMeasureSpec, int heightMeasureSpec)</span> {
+    setMeasureDimension<span class="params">(getDefaultSize<span class="params">(getSuggestedMinimumWidth<span class="params">()</span>,
+    widthMesureSpec)</span>, getDefaultSize<span class="params">(getSuggestedMinimumHeight<span class="params">()</span>,
+    heightMeasureSpec)</span>)</span>;
+}
+</code></pre><ol>
+<li>viewGroup 的过程</li>
+</ol>
+<p>它没有mesure 方法， 有一个measureChildren()方法，在这个里面会对每一个view调用measureChild()方法，，在这个方法里，会调用view的measure()方法。  </p>
+<p>LinearLayout 的onMeasure(), 来分析ViewGroup的measure过程.</p>
+<p><em>如何得到view的高和宽</em></p>
+<ol>
+<li><p>在activity中调用<code>onWindowFocusChanged()</code></p>
+<p> 缺点：会被多次调用，不太好</p>
+</li>
+<li><p>view.post(runnable)</p>
+<p> 通过post将一个<code>runnable</code>投递到消息队列中，然后等待<code>Looper</code>调用此<code>runnable</code>的时候，view已经被初始化好了。例如：</p>
+</li>
+</ol>
+<pre><code><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>{
+    <span class="keyword">super</span>.onStart();
+    view.post(<span class="keyword">new</span> Runnable() {
+        <span class="annotation">@Override</span>
+        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+            <span class="keyword">int</span> width = view.getMeasureWidth();
+            <span class="keyword">int</span> height = view.getMeasureHeight();
+        }
+    });
+}
+</code></pre><ol>
+<li>使用<code>ViewTreeObserver</code></li>
+</ol>
+<p>它有很多回调接口可以完成这个功能，例如<code>OnGlobalLayoutListener</code>这个接口，当view树的状态发生改变或者view树内部的view的可见性发生改变时，<code>onGlobalLayout()</code>将被回调。</p>
+<blockquote>
+<p>伴随着view树的状态的改变，<code>onGolbalLayout()</code>会被调用多次。</p>
+</blockquote>
+<ol>
+<li>view.measure(int widthMeasureSpec, int heightMeasureSpec)</li>
+</ol>
+<p>这种方法，有些复杂，而且情况多变，不一定会获取到</p>
+<blockquote>
+<p>推荐第二种方法，即通过view.post(runnable)来实现</p>
+</blockquote>
+<h3 id="layout过程">layout过程</h3><p>layout 的过程是<code>ViewGroup</code>用来确定子元素的位置<br>当viewGroup的位置确定后，会在<code>onLayout()</code>遍历所有的子元素并调用其<code>layout()</code>（确定本身的位置）, 在layout方法中<code>onLayout()</code>（确定子元素的位置）也会被调用。</p>
+<h3 id="draw过程">draw过程</h3><p>将view绘制到屏幕上，view的绘制遵循以下几步：</p>
+<ol>
+<li>绘制背景 background.draw(canvas)</li>
+<li>绘制自己(onDraw)</li>
+<li>绘制children(dispatchDraw)</li>
+<li>绘制装饰(onDrawScrollBars)</li>
+</ol>
+<p>view里面还有一个方法：<code>setWillNotDraw()</code></p>
+<pre><code><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">setWillNOtDraw</span><span class="params">(<span class="keyword">boolean</span> willNotDraw)</span> </span>{
+    setFlags(willNotDraw ? WILL_NOT_DRAW : 0, DRAW, MASK);
+}
+</code></pre><p>如果一个view不需要绘制任何内容，那么设置这个标记后，系统会进行相应的优化。<br>默认情况下，view不会启用这个优化标志位，但是ViewGroup会默认启用这个优化标记位。</p>
+<h3 id="4-4_自定义View">4.4 自定义View</h3><p>大致分为4类</p>
+<ol>
+<li>继承View 重写 onDraw()</li>
+<li>继承ViewGroup派生特殊的Layout</li>
+<li>继承特定的View（比如TextView）</li>
+<li>继承特定的ViewGroup（比如LinearLayout）</li>
+</ol>
+<h3 id="继承view重写draw()">继承view重写draw()</h3><p>自定义View须知：</p>
+<ol>
+<li><p>让view支持 <code>wrap_content</code></p>
+<p> 对于直接继承自View的控件，如果不对<code>wrap_content</code>做特殊处理，那么使用的<br> <code>wrap_content</code>就相当于使用<code>match_parent</code><br> 需要在<code>onMeasure()</code>里面处理</p>
+</li>
+<li><p>如果有必要，让你的view支持padding</p>
+<p> margin属性，是有父控件控制的，它会在自定义的view中生效， 但padding 不会生效。<br> 对这个问题，修改一下draw().</p>
+</li>
+<li><p>尽量不要在view中使用Handler, 没必要</p>
+<p> view本身提供了post()系列方法</p>
+</li>
+<li><p>view中如果有线程或者动画，需要及时停止，参考 <code>View# onDetachedFromWindow</code></p>
+<p> 如果不及时处理这种问题，有可能会造成内存泄漏。</p>
+</li>
+<li><p>view 有滑动嵌套情形时， 需要处理好滑动冲突。</p>
+</li>
+</ol>
+<blockquote>
+<p>继承view重写onDraw(), 需要注意上面两点</p>
+</blockquote>
+<p><strong>如何添加自定义的属性</strong></p>
+<ol>
+<li>在<code>attr.xml</code>文件里添加自定义的属性</li>
+</ol>
+<pre><code><span class="tag">&lt;<span class="title">resources</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">declare-styleable</span> <span class="attribute">name</span>=<span class="value">"CircleView"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">attr</span> <span class="attribute">name</span>=<span class="value">"circle_color"</span> <span class="attribute">format</span>=<span class="value">"color"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">declare-styleable</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">resources</span>&gt;</span>
+</code></pre><ol>
+<li>在view的构造方法中解析这些自定义的属性(在含有defStyleAttr参数的构造函数中)，并处理</li>
+</ol>
+<pre><code>TypedArray a = context.obtainStyleAttributes<span class="params">(attr, R.styleable.CircleView, defStyleattr, <span class="number">0</span>)</span>;
+mColor = a.getColor<span class="params">(...)</span>;
+<span class="comment">//类似的操作</span>
+a.recycle<span class="params">()</span>;<span class="comment">//释放资源</span>
+</code></pre><ol>
+<li>在布局文件中使用自定义属性</li>
+</ol>
+<h3 id="继承ViewGroup_派生处特殊的Layout">继承ViewGroup 派生处特殊的Layout</h3><h2 id="第9章_四大组件的工作过程">第9章 四大组件的工作过程</h2><blockquote>
+<p>service 有启动状态(startService)和绑定状态(bindService)</p>
+</blockquote>
+<p><strong>Activity 的工作过程</strong><br>启动activity 的真正实现是由 ActivityMangerNative.getDefault().startActivity() 完成的。ActivityMangerService (简称AMS)， 继承自ActivityMangerNative,而<code>ActivityMangerNative</code>,继承自<code>Binder</code>并实现了<code>IActivityManger</code>这个<code>Binder</code>接口，<br>因此，AMS也是一个Binder, 它是IActivityManger的具体实现。</p>
+<blockquote>
+<p>在ActivityMangerNative中，AMS这个Binder对象采用单例模式对外提供。</p>
+</blockquote>
+<h2 id="第10章_Android的消息机制">第10章 Android的消息机制</h2><blockquote>
+<p>android 的消息处理有三个核心类：<code>looper</code>, <code>Handler</code>, <code>Message</code>.<br>其中<code>Looper</code> 里面包括 <code>MessageQueue</code>(消息队列).<br>不允许在子线程中去修改主界面，需要<code>Message</code>, Handler,处理  </p>
+</blockquote>
+<h3 id="Looper">Looper</h3><p>它使一个普通线程变成Looper线程（循环工作的线程）  </p>
+<pre><code>public <span class="class"><span class="keyword">class</span> <span class="title">LooperThread</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Thread</span> {</span>
+    <span class="annotation">@Overide</span>
+   public void run () {
+       <span class="comment">//使当前线程变成Looper线程</span>
+       <span class="type">Looper</span>.prepare();
+       <span class="comment">//...</span>
+       <span class="comment">//开始循环处理消息队列</span>
+       <span class="type">Looper</span>.loop();
+   }
+}
+</code></pre><p><strong>Looper类中实例化的是 <code>ThreadLocal</code>(线程本地存储对象)</strong>  </p>
+<ul>
+<li><p>Looper.prepare()  </p>
+<p>  在<code>Looper</code>源码中，可以发现核心是将looper对象定义为<code>ThreadLocal</code>.  </p>
+</li>
+<li><p>Looper.loop()  </p>
+<p>  调用loop()方法后，Looper线程就开始真正工作了，不断的从<code>MessageQueue</code>取出<br>  队头的消息执行。   </p>
+</li>
+<li><p>Looper.myLooper()  </p>
+<p>  得到当前线程looper现象(一个线程只有一个looper)  </p>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Looper myLooper() {
+    <span class="comment">//在任意线程中调用，返回的是那个线程的looper(即`ThreadLocal`)</span>
+    <span class="keyword">return</span> (Looper)sThreadLocal.<span class="keyword">get</span>();
+}
+</code></pre></li>
+<li><p>getThread() </p>
+<p>  得到looper对象所属线程:</p>
+<pre><code><span class="keyword">public</span> <span class="function">Thread <span class="title">getThread</span><span class="params">()</span> </span>{
+    <span class="keyword">return</span> mThread;
+}
+</code></pre></li>
+<li><p>quit()  </p>
+<p>  结束looper循环  </p>
+<pre><code><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">quit</span><span class="params">()</span> </span>{
+    <span class="comment">//创建一个空的Message, 它的target 为null, 表示结束循环消息</span>
+    Message msg = Message.obtin();
+    mQueue.enqueueMessage(msg, <span class="number">0</span>);
+}
+</code></pre></li>
+</ul>
+<h3 id="handler">handler</h3><p>handler 扮演着在MQ上添加消息和处理消息的角色，通知MQ它要执行一个消息(<code>sendMessage</code>),<br>并在loop到自己的时候执行(<code>handleMessage</code>), 整个过程是异步的。  </p>
+<ul>
+<li><p>handler的处理  </p>
+<p>  类里面，绑定关联MQ, 和looper  </p>
+</li>
+</ul>
+<p>一个线程里只可以有一个<code>Looper</code>, 但可以有多个<code>Handler</code>  </p>
+<ul>
+<li><p>handler发送消息</p>
+</li>
+<li><p>handler处理消息  </p>
+<p>  handleMessage(Message msg)</p>
+</li>
+</ul>
+<ol>
+<li>handler 可以在任意线程发送消息，这些消息会被添加到关联的MQ上  </li>
+<li>handler 是在它关联的looper线程中处理消息的  </li>
+</ol>
+<h3 id="封装任务_Message">封装任务 Message</h3><p>在消息处理机制中，message又叫task，  </p>
+<ol>
+<li>通过Message.obtain() 来从消息池中获得空消息对象，节省资源  </li>
+<li>Message.arg1和Message.arg2传递信息，比Bundle更省内存  </li>
+<li>善用message.what 来标识信息，以便用不同方式处理message.  </li>
+</ol>
+<h2 id="第12章_Bitmap_的记载和Cache">第12章 Bitmap 的记载和Cache</h2><blockquote>
+<p>常用的缓存策略是<code>LruCache</code>和<code>DiskLruCache</code><br><code>LruCache</code>常被用来做内存缓存，<code>DiskLruCache</code>常用作存储缓存  </p>
+</blockquote>
+<p><strong>Bitmap 的高效加载</strong><br>四类方法：  </p>
+<ol>
+<li>decodeFile()</li>
+<li>decodeResource()  </li>
+<li>decodeStream()</li>
+<li>decodeByteArray()</li>
+</ol>
+<blockquote>
+<p>对应着<code>BitmapFactory</code>类中的几个native方法  </p>
+</blockquote>
+<p>采用<code>BitmapFactory.Options</code>来加载所需的尺寸的图片。  </p>
+<p><strong>图片的压缩</strong>  </p>
+<p>主要看一个参数<code>inSampleSize</code>,<br>通过一个函数来给inSampleSize赋值。  </p>
+<p><strong>采样率</strong></p>
+<p>通过采样率可有效的加载图片：</p>
+<p>主要的一个参数为<code>inJustDecodeBounds</code>  </p>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span>  Bitmap decodeSampledBitmapFromResource(Resource res, <span class="keyword">int</span>
+        resId, <span class="keyword">int</span> reqWidth, <span class="keyword">int</span> reqHeight) {
+    <span class="keyword">final</span> BitmapFactory.<span class="keyword">Options</span> <span class="keyword">options</span> = <span class="keyword">new</span> BitmapFactory.<span class="keyword">Options</span>();
+    <span class="keyword">options</span>.inJustDecodeBounds = <span class="keyword">true</span>;
+    ...
+}
+</code></pre><ol>
+<li>将BitmapFactory.Options 的inJustDecodeBounds 的参数设为true， 并加载图片  </li>
+<li>将BitmapFactory.Options 中取出图片的原始宽高信息，它们对应于outWidth和outHeight 参数  </li>
+<li>根据采样率的规则并结合目标Viewd的所需大小计算出采样率inSampleSize  </li>
+<li>将BitmapFactory.Options 的 inJustDecodeBounds 参数设为false, 然后重新加载 </li>
+</ol>
+<p>调用：  </p>
+<pre><code><span class="tag">mImageView</span><span class="class">.setImageBitmap</span>(
+    <span class="tag">decodeSampledBitmapFromResources</span>(), <span class="tag">R</span><span class="class">.id</span><span class="class">.my_image</span>, 100, 100);  
+</code></pre><p><strong>Android 中的缓存策略</strong>  </p>
+<p><strong>Lru LruCache</strong>  </p>
+<p><strong>强引用StrongReference：</strong><br>直接的对象引用(正常引用)  </p>
+<p><strong>软引用SoftReference:</strong><br>对于GC来说， SoftReference的强度明显低于 SrongReference.<br>SoftReference修饰的引用，其告诉GC：我是一个 软引用，当内存不足的时候，我指向的这个内存是可以给你释放掉的.  </p>
+<p><strong>弱引用WeakReference:</strong><br>WeakReference 的强度又明显低于 SoftReference 。 WeakReference 修饰的引用，其告诉GC：我是一个弱 引用，对于你的要求我没有话说，我指向的这个内存是可以给你释放掉的。  </p>
+<p><strong>虚引用 PhantomReference：</strong><br>  虚引用其实和上面讲到的各种引用不是一回事的，他主要是为跟踪一个对象何时被GC回收。在android里面也是有用到的：FileCleaner.java   </p>
+<p>LruCache 是线程安全的，在里面有<code>final LinkedHashMap</code>  </p>
+<p>创建<code>LruCache</code>,实现sizeOf()方法  </p>
+<p>从<code>LruCache</code>中获取一个缓存对象：  </p>
+<pre><code>mMemoryCache.<span class="built_in">get</span>(<span class="variable">key</span>);
+</code></pre><p>向<code>LruCache</code>中添加一个缓存对象：  </p>
+<pre><code>mMemoryCache.<span class="built_in">add</span>(<span class="variable">key</span>, bitmap);  
+</code></pre><p>通过remove 操作可删除一个指定的缓存对象  </p>
+<p><strong>DiskLruCache</strong>  </p>
+<blockquote>
+<p>不能通过构造方法创建， 提供了一个open()方法用于构建自身  </p>
+</blockquote>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">DiskLruCache <span class="title">open</span><span class="params">(File directory, <span class="keyword">int</span> appVersion, <span class="keyword">int</span> valueCount, <span class="keyword">long</span> maxSize)</span></span>;  
+</code></pre><p>第一个参数表示磁盘缓存在文件系统中的存储路径。<br>第二个参数表示应用的版本号， 一般设为1即可。<br>第三个参数表示单个节点所对应的数据的个数， 一般为1 即可。<br>第四个参数表示缓存的总大小。  </p>
+<p>当缓存大小超出这个值后，<code>DiskLruCache</code>会清除一些缓存从而保证总大小不大于这个设定值。  </p>
+<blockquote>
+<p><code>DiskLruCache</code>的缓存添加，是通过Editor完成的。（将url转换为key）<br><code>DiskLruCache</code>的缓存查找  </p>
+</blockquote>
+<p><strong>ImageLoader的实现</strong><br>一个优秀的ImageLoader的功能  </p>
+<ul>
+<li>图片的同步加载  </li>
+<li>图片的异步加载</li>
+<li>图片的压缩（inSampleSize, inJustDecodeBounds）  </li>
+<li>内存缓存  </li>
+<li>磁盘缓存  </li>
+<li>网络拉取  </li>
+</ul>
+<p><strong>优化列表的卡顿现象</strong><br>不要在主线程中做太耗时的操作，  </p>
+<ol>
+<li><p>不要在getView()中执行耗时的操作</p>
+<p> 耗时的操作要通过异步的方式来处理。</p>
+</li>
+<li><p>控制异步任务的执行频率。  </p>
+<p> 在列表滑动的时候停止加载图片，尽管这个过程是异步的，等列表停下来再去加载<br> 图片仍然是可以获得良好的用户体验。<br> 具体实现：<br> 为RecyclerView 或是listView， gridView, 设置setOnScrollListener,<br> 并在OnScrollListener的onScrollStateChanged()方法中判断列表是否处于滑动状态。如果是，就停止加载图片：  </p>
+<pre><code><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onScrollStateChanged</span><span class="params">(AbsListView view, 
+        <span class="keyword">int</span> scrollState)</span> </span>{
+    <span class="keyword">if</span> (scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
+        mIsGridViewIdle = <span class="keyword">true</span>;
+        mImageAdapter.nitifyDataSetChanged();
+    } <span class="keyword">else</span> {
+        mIsGridViewIdle = <span class="keyword">false</span>;
+    }
+}
+</code></pre><p> 然后再getView()方法中，仅当列表静止时才能加载图片。  </p>
+<pre><code><span class="keyword">if</span> <span class="params">(mIsGridViewIdle &amp;&amp; mCanGetBitmapFromNetWork)</span> {
+    imageView.setTag<span class="params">(uri)</span>;
+    mImageLoader.bindBitmap<span class="params">(uri, imageView, mImageWidth, mImageWidth)</span>;
+}
+</code></pre></li>
+</ol>
+<blockquote>
+<p>一般通过上面的两个方法就不会有列表的卡顿现象， 如果有某些特殊情况。<br>就可以通过硬件加速。  </p>
+</blockquote>
+<ol>
+<li><p>开启硬件加速  </p>
+<pre><code>android：hardwareAccelerated=<span class="string">"true"</span><span class="comment">//即可为Activity开启硬件加速。  </span>
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/19/prepare/JMM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java 内存模型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/10/prepare/java/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java 的集合</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="prepare/artOfAndroid" data-title="Android 开发艺术探索" data-url="http://yoursite.com/2016/02/14/prepare/artOfAndroid/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 chenchen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
